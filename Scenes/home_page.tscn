@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://be8f8j1p4b8cx"]
+[gd_scene load_steps=11 format=3 uid="uid://be8f8j1p4b8cx"]
 
 [ext_resource type="Script" uid="uid://xmc4itnjal2a" path="res://Godot script/Scenes Script/home_page.gd" id="1_8unir"]
 [ext_resource type="FontFile" uid="uid://docxxo2smmwtj" path="res://Fonts/Helvetica-Bold.ttf" id="2_3e5ya"]
@@ -38,6 +38,8 @@ bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3e5ya"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3uk7k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_257lx"]
 bg_color = Color(0, 0.113725, 0.247059, 1)
@@ -118,7 +120,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_h4cya")
 theme_override_styles/normal = SubResource("StyleBoxFlat_h4cya")
 text = "Shop"
 
-[node name="Button3" type="Button" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+[node name="InventoryButton" type="Button" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 75)
 layout_mode = 2
 size_flags_vertical = 3
@@ -131,7 +133,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_h4cya")
 theme_override_styles/normal = SubResource("StyleBoxFlat_h4cya")
 text = "Inventory"
 
-[node name="Button4" type="Button" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+[node name="LeaderboardsButton" type="Button" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -143,7 +145,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_h4cya")
 theme_override_styles/normal = SubResource("StyleBoxFlat_h4cya")
 text = "Leaderboards"
 
-[node name="Button5" type="Button" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -173,6 +175,65 @@ visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_3e5ya")
 
+[node name="ShopExit" type="Button" parent="HBoxContainer/middle_container/ShopPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -61.0
+offset_bottom = 61.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_3uk7k")
+text = "X"
+
+[node name="InventoryPanel" type="Panel" parent="HBoxContainer/middle_container"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3e5ya")
+
+[node name="InventoryExit" type="Button" parent="HBoxContainer/middle_container/InventoryPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -61.0
+offset_bottom = 61.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_3uk7k")
+text = "X"
+
+[node name="LeaderboardsPanel" type="Panel" parent="HBoxContainer/middle_container"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3e5ya")
+
+[node name="LeaderboardsExit" type="Button" parent="HBoxContainer/middle_container/LeaderboardsPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -61.0
+offset_bottom = 61.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_3uk7k")
+text = "X"
+
+[node name="SettingsPanel" type="Panel" parent="HBoxContainer/middle_container"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3e5ya")
+
+[node name="SettingsExit" type="Button" parent="HBoxContainer/middle_container/SettingsPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -61.0
+offset_bottom = 61.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_3uk7k")
+text = "X"
+
 [node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 0
@@ -188,3 +249,10 @@ size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_257lx")
 
 [connection signal="button_down" from="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/ShopButton" to="." method="_on_shop_button_button_down"]
+[connection signal="button_down" from="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/InventoryButton" to="." method="_on_inventory_button_button_down"]
+[connection signal="button_down" from="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/LeaderboardsButton" to="." method="_on_leaderboards_button_button_down"]
+[connection signal="button_down" from="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_button_down"]
+[connection signal="button_down" from="HBoxContainer/middle_container/ShopPanel/ShopExit" to="." method="_on_shop_exit_button_down"]
+[connection signal="button_down" from="HBoxContainer/middle_container/InventoryPanel/InventoryExit" to="." method="_on_inventory_exit_button_down"]
+[connection signal="button_down" from="HBoxContainer/middle_container/LeaderboardsPanel/LeaderboardsExit" to="." method="_on_leaderboards_exit_button_down"]
+[connection signal="button_down" from="HBoxContainer/middle_container/SettingsPanel/SettingsExit" to="." method="_on_settings_exit_button_down"]
