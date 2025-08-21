@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dc6y1x6wm3flf"]
+[gd_scene load_steps=9 format=3 uid="uid://dc6y1x6wm3flf"]
 
 [ext_resource type="FontFile" uid="uid://docxxo2smmwtj" path="res://Fonts/Helvetica-Bold.ttf" id="1_7ltar"]
+[ext_resource type="Script" uid="uid://dwt8ccrpkobrw" path="res://Godot script/Scenes Script/sign_up_page.gd" id="1_kljoo"]
 [ext_resource type="Texture2D" uid="uid://cirigx8w17xfk" path="res://Images/game_logo.png" id="2_h1pxh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skapt"]
@@ -39,6 +40,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_kljoo")
 
 [node name="MainBackground" type="Panel" parent="."]
 layout_mode = 1
@@ -72,9 +74,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -271.0
-offset_top = -191.5
+offset_top = -177.5
 offset_right = 271.0
-offset_bottom = 123.5
+offset_bottom = 211.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
@@ -134,48 +136,13 @@ theme_override_fonts/normal_font = ExtResource("1_7ltar")
 theme_override_font_sizes/normal_font_size = 45
 text = "Sign Up"
 
-[node name="PlatformButtons" type="HBoxContainer" parent="MainBackground/LogInContainer"]
-offset_left = 30.0
-offset_top = 450.0
-offset_right = 572.0
-offset_bottom = 514.0
-theme_override_constants/separation = 5
-alignment = 1
-
-[node name="Google" type="Button" parent="MainBackground/LogInContainer/PlatformButtons"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 30
-text = "Google"
-
-[node name="Button2" type="Button" parent="MainBackground/LogInContainer/PlatformButtons"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 30
-text = "Apple"
-
-[node name="orText" type="RichTextLabel" parent="MainBackground/LogInContainer"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -18.5
-offset_top = -145.0
-offset_right = 18.5
-offset_bottom = -89.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 35
-text = "or"
-
 [node name="GameLogo" type="TextureRect" parent="MainBackground/LogInContainer"]
 modulate = Color(1, 1, 1, 0.960784)
-offset_left = -8.0
+offset_left = -24.0
 offset_top = -40.0
 offset_right = 158.0
 offset_bottom = 126.0
 texture = ExtResource("2_h1pxh")
 expand_mode = 1
+
+[connection signal="pressed" from="MainBackground/LogInContainer/InputContainer/CreateAccountButton" to="." method="_on_create_account_button_pressed"]
