@@ -1,19 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://dkyp616tpv48d"]
+[gd_scene load_steps=15 format=3 uid="uid://dkyp616tpv48d"]
 
 [ext_resource type="Script" uid="uid://23seghq6pqax" path="res://Godot script/Scenes Script/log_in_page.gd" id="1_b3m5s"]
 [ext_resource type="FontFile" uid="uid://docxxo2smmwtj" path="res://Fonts/Helvetica-Bold.ttf" id="2_823ph"]
+[ext_resource type="FontFile" uid="uid://cpp8fwktl7xll" path="res://Fonts/helvetica-rounded-bold-5871d05ead8de.otf" id="3_823ph"]
 [ext_resource type="Texture2D" uid="uid://cirigx8w17xfk" path="res://Images/game_logo.png" id="3_mv1ju"]
+[ext_resource type="FontFile" uid="uid://cvb2ldnxn2qea" path="res://Fonts/Helvetica-BoldOblique.ttf" id="5_mv1ju"]
+
+[sub_resource type="Theme" id="Theme_b3m5s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16quy"]
 bg_color = Color(0, 0.0352941, 0.0980392, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxp7a"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.82606, 0.82606, 0.82606, 1)
 border_color = Color(0, 0, 0, 1)
 border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5olu"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.641934, 0.641934, 0.641934, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -22,7 +26,7 @@ border_color = Color(0, 0, 0, 1)
 border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6scy4"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.643137, 0.643137, 0.643137, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -30,11 +34,17 @@ border_width_bottom = 3
 border_color = Color(0, 0, 0, 1)
 border_blend = true
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xh6s"]
-bg_color = Color(0.0392157, 0.431373, 0.827451, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_823ph"]
+bg_color = Color(0.0196078, 0.305882, 0.596078, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hyg8m"]
-bg_color = Color(0.0392157, 0.431373, 0.827451, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mv1ju"]
+bg_color = Color(0.0156863, 0.207843, 0.415686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aq84k"]
+bg_color = Color(0.0196078, 0.305882, 0.596078, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4ugq"]
+bg_color = Color(0.0156863, 0.207843, 0.415686, 1)
 
 [node name="Control2" type="Control"]
 layout_mode = 3
@@ -43,6 +53,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_b3m5s")
 script = ExtResource("1_b3m5s")
 
 [node name="Background" type="Panel" parent="."]
@@ -55,16 +66,17 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_16quy")
 
 [node name="LogInContainer" type="Panel" parent="Background"]
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -301.0
-offset_top = -283.0
-offset_right = 301.0
-offset_bottom = 272.0
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xxp7a")
@@ -76,10 +88,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -270.0
-offset_top = -177.5
-offset_right = 272.0
-offset_bottom = 215.5
+offset_left = -177.0
+offset_top = -130.0
+offset_right = 173.0
+offset_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
@@ -94,7 +106,7 @@ text = "Username"
 [node name="Username" type="LineEdit" parent="Background/LogInContainer/InputContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_placeholder_color = Color(0.317711, 0.317711, 0.317711, 1)
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_v5olu")
@@ -109,49 +121,76 @@ text = "Password"
 [node name="Password" type="LineEdit" parent="Background/LogInContainer/InputContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_placeholder_color = Color(0.317647, 0.317647, 0.317647, 1)
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_6scy4")
 
-[node name="LogInButton" type="Button" parent="Background/LogInContainer/InputContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_8xh6s")
-text = "Log In"
-
-[node name="SignUpButton" type="Button" parent="Background/LogInContainer/InputContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_hyg8m")
-text = "Sign Up"
-
-[node name="LogInText" type="RichTextLabel" parent="Background/LogInContainer"]
+[node name="LogInText" type="Label" parent="Background/LogInContainer"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -176.0
-offset_top = 25.0
-offset_right = 288.0
-offset_bottom = 74.0
+offset_left = -80.0
+offset_top = 13.0
+offset_right = 188.0
+offset_bottom = 62.0
 grow_horizontal = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_823ph")
-theme_override_font_sizes/normal_font_size = 45
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_823ph")
+theme_override_font_sizes/font_size = 30
 text = "Log In"
 
 [node name="GameLogo" type="TextureRect" parent="Background/LogInContainer"]
 modulate = Color(1, 1, 1, 0.960784)
 layout_mode = 0
-offset_left = -10.0
-offset_top = -36.0
-offset_right = 156.0
-offset_bottom = 130.0
+offset_left = -26.0
+offset_top = -43.0
+offset_right = 159.0
+offset_bottom = 114.0
 texture = ExtResource("3_mv1ju")
 expand_mode = 1
 
-[connection signal="pressed" from="Background/LogInContainer/InputContainer/LogInButton" to="." method="_on_log_in_button_pressed"]
-[connection signal="pressed" from="Background/LogInContainer/InputContainer/SignUpButton" to="." method="_on_sign_up_button_pressed"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/LogInContainer"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = 80.0
+offset_right = 164.0
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 90
+
+[node name="Sign_in_button" type="Button" parent="Background/LogInContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_823ph")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_823ph")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mv1ju")
+text = "Sign up"
+
+[node name="Log_in_button" type="Button" parent="Background/LogInContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_823ph")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_aq84k")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m4ugq")
+text = "Log in"
+
+[node name="Warning_text" type="Label" parent="Background/LogInContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.1
+offset_left = -2.0
+offset_top = -52.0
+offset_right = 358.0
+theme_override_fonts/font = ExtResource("5_mv1ju")
+theme_override_font_sizes/font_size = 25

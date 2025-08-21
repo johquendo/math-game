@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dojqniic322hs"]
+[gd_scene load_steps=12 format=3 uid="uid://dojqniic322hs"]
 
-[ext_resource type="FontFile" uid="uid://docxxo2smmwtj" path="res://Fonts/Helvetica-Bold.ttf" id="1_7ltar"]
 [ext_resource type="Script" uid="uid://dwt8ccrpkobrw" path="res://Godot script/Scenes Script/sign_up_page.gd" id="1_kljoo"]
 [ext_resource type="Texture2D" uid="uid://cirigx8w17xfk" path="res://Images/game_logo.png" id="2_h1pxh"]
+[ext_resource type="FontFile" uid="uid://cpp8fwktl7xll" path="res://Fonts/helvetica-rounded-bold-5871d05ead8de.otf" id="2_n38k3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skapt"]
 bg_color = Color(0, 0.0352941, 0.0980392, 1)
@@ -13,7 +13,7 @@ border_color = Color(0, 0, 0, 1)
 border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndvqa"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.643137, 0.643137, 0.643137, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -22,7 +22,7 @@ border_color = Color(0, 0, 0, 1)
 border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xj0oh"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.643137, 0.643137, 0.643137, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -30,8 +30,17 @@ border_width_bottom = 3
 border_color = Color(0, 0, 0, 1)
 border_blend = true
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsljv"]
-bg_color = Color(0.0392157, 0.431373, 0.827451, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5wv0"]
+bg_color = Color(0.0196078, 0.305882, 0.596078, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kljoo"]
+bg_color = Color(0.0156863, 0.207843, 0.415686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijdwd"]
+bg_color = Color(0.0196078, 0.305882, 0.596078, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n38k3"]
+bg_color = Color(0.0156863, 0.207843, 0.415686, 1)
 
 [node name="Control2" type="Control"]
 layout_mode = 3
@@ -84,7 +93,8 @@ theme_override_constants/separation = 10
 [node name="Username" type="LineEdit" parent="MainBackground/LogInContainer/InputContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_placeholder_color = Color(0.317711, 0.317711, 0.317711, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_ndvqa")
 placeholder_text = "Username"
@@ -92,7 +102,8 @@ placeholder_text = "Username"
 [node name="Email" type="LineEdit" parent="MainBackground/LogInContainer/InputContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_placeholder_color = Color(0.317647, 0.317647, 0.317647, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_xj0oh")
 placeholder_text = "Email"
@@ -100,40 +111,56 @@ placeholder_text = "Email"
 [node name="Password" type="LineEdit" parent="MainBackground/LogInContainer/InputContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_placeholder_color = Color(0.317647, 0.317647, 0.317647, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_xj0oh")
 placeholder_text = "Password"
+secret = true
 
-[node name="PasswordConfirmation" type="LineEdit" parent="MainBackground/LogInContainer/InputContainer"]
+[node name="Confirm_pass" type="LineEdit" parent="MainBackground/LogInContainer/InputContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_placeholder_color = Color(0.317647, 0.317647, 0.317647, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_xj0oh")
-placeholder_text = "Confirm Password"
+placeholder_text = "Confirm password"
+secret = true
 
 [node name="CreateAccountButton" type="Button" parent="MainBackground/LogInContainer/InputContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_n38k3")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_lsljv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a5wv0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kljoo")
 text = "Create Account"
 
-[node name="SignUpText" type="RichTextLabel" parent="MainBackground/LogInContainer"]
+[node name="Button" type="Button" parent="MainBackground/LogInContainer/InputContainer"]
+custom_minimum_size = Vector2(100, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_n38k3")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_ijdwd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_n38k3")
+text = "Back"
+
+[node name="SignUpText" type="Label" parent="MainBackground/LogInContainer"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -173.0
-offset_top = 21.0
-offset_right = 1.0
-offset_bottom = 71.0
+offset_left = -175.0
+offset_top = 26.0
+offset_right = 263.0
+offset_bottom = 76.0
 grow_horizontal = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("1_7ltar")
-theme_override_font_sizes/normal_font_size = 45
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_n38k3")
+theme_override_font_sizes/font_size = 20
 text = "Sign Up"
 
 [node name="GameLogo" type="TextureRect" parent="MainBackground/LogInContainer"]
@@ -147,3 +174,4 @@ texture = ExtResource("2_h1pxh")
 expand_mode = 1
 
 [connection signal="pressed" from="MainBackground/LogInContainer/InputContainer/CreateAccountButton" to="." method="_on_create_account_button_pressed"]
+[connection signal="pressed" from="MainBackground/LogInContainer/InputContainer/Button" to="." method="_on_button_pressed"]
