@@ -31,14 +31,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -169.5
-offset_top = 84.0
-offset_right = 169.5
-offset_bottom = 229.0
+offset_left = -192.0
+offset_top = 64.0
+offset_right = 192.0
+offset_bottom = 209.0
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.784314)
 theme_override_font_sizes/normal_font_size = 100
-text = "Mathix"
+text = "Mathrix"
 
 [node name="GameDescription" type="RichTextLabel" parent="."]
 layout_mode = 1
