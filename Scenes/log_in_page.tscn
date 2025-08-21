@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dkyp616tpv48d"]
 
-[ext_resource type="Script" path="res://Godot script/Scenes Script/log_in_page.gd" id="1_b3m5s"]
+[ext_resource type="Script" uid="uid://23seghq6pqax" path="res://Godot script/Scenes Script/log_in_page.gd" id="1_b3m5s"]
 [ext_resource type="FontFile" uid="uid://docxxo2smmwtj" path="res://Fonts/Helvetica-Bold.ttf" id="2_823ph"]
 [ext_resource type="Texture2D" uid="uid://cirigx8w17xfk" path="res://Images/game_logo.png" id="3_mv1ju"]
 
