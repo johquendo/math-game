@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dc6y1x6wm3flf"]
+[gd_scene load_steps=9 format=3 uid="uid://dojqniic322hs"]
 
 [ext_resource type="FontFile" uid="uid://docxxo2smmwtj" path="res://Fonts/Helvetica-Bold.ttf" id="1_7ltar"]
-[ext_resource type="Script" uid="uid://dwt8ccrpkobrw" path="res://Godot script/Scenes Script/sign_up_page.gd" id="1_kljoo"]
+[ext_resource type="Script" path="res://Godot script/Scenes Script/sign_up_page.gd" id="1_kljoo"]
 [ext_resource type="Texture2D" uid="uid://cirigx8w17xfk" path="res://Images/game_logo.png" id="2_h1pxh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skapt"]
@@ -138,6 +138,7 @@ text = "Sign Up"
 
 [node name="GameLogo" type="TextureRect" parent="MainBackground/LogInContainer"]
 modulate = Color(1, 1, 1, 0.960784)
+layout_mode = 0
 offset_left = -24.0
 offset_top = -40.0
 offset_right = 158.0
