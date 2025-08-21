@@ -1,0 +1,126 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxc42qaprmkae"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16quy"]
+bg_color = Color(0, 0.0352941, 0.0980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5olu"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxp7a"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainBackground" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_16quy")
+
+[node name="Header" type="Panel" parent="MainBackground"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 87.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v5olu")
+
+[node name="GameTitle" type="RichTextLabel" parent="MainBackground/Header"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.0
+offset_top = 17.0
+offset_right = 77.0
+offset_bottom = 68.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 35
+text = "MathTrix"
+
+[node name="LogInContainer" type="Panel" parent="MainBackground"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -301.0
+offset_top = -174.0
+offset_right = 301.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xxp7a")
+
+[node name="InputContainer" type="VBoxContainer" parent="MainBackground/LogInContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.0
+offset_top = -174.0
+offset_right = 271.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Username" type="LineEdit" parent="MainBackground/LogInContainer/InputContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "Username"
+
+[node name="Password" type="LineEdit" parent="MainBackground/LogInContainer/InputContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "Password"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainBackground/LogInContainer"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LogInButton" type="Button" parent="MainBackground/LogInContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.5
+offset_top = 12.0
+offset_right = 53.5
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlatformButtons" type="HBoxContainer" parent="MainBackground/LogInContainer"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 311.0
+offset_right = 572.0
+offset_bottom = 372.0
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Button" type="Button" parent="MainBackground/LogInContainer/PlatformButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button2" type="Button" parent="MainBackground/LogInContainer/PlatformButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
