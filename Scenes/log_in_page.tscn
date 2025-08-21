@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://dkyp616tpv48d"]
+[gd_scene load_steps=10 format=3 uid="uid://bxc42qaprmkae"]
 
-[ext_resource type="Script" path="res://Godot script/Scenes Script/log_in_page.gd" id="1_b3m5s"]
+[ext_resource type="Script" uid="uid://23seghq6pqax" path="res://Godot script/Scenes Script/log_in_page.gd" id="1_b3m5s"]
 [ext_resource type="FontFile" uid="uid://docxxo2smmwtj" path="res://Fonts/Helvetica-Bold.ttf" id="2_823ph"]
 [ext_resource type="Texture2D" uid="uid://cirigx8w17xfk" path="res://Images/game_logo.png" id="3_mv1ju"]
 
@@ -36,7 +36,7 @@ bg_color = Color(0.0392157, 0.431373, 0.827451, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hyg8m"]
 bg_color = Color(0.0392157, 0.431373, 0.827451, 1)
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -76,13 +76,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -271.0
+offset_left = -270.0
 offset_top = -177.5
-offset_right = 271.0
+offset_right = 272.0
 offset_bottom = 215.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="Background/LogInContainer/InputContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_823ph")
+theme_override_font_sizes/font_size = 30
+text = "Username"
 
 [node name="Username" type="LineEdit" parent="Background/LogInContainer/InputContainer"]
 layout_mode = 2
@@ -91,7 +98,13 @@ theme_override_colors/font_placeholder_color = Color(0.317711, 0.317711, 0.31771
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_v5olu")
-placeholder_text = "Username"
+
+[node name="Label2" type="Label" parent="Background/LogInContainer/InputContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_823ph")
+theme_override_font_sizes/font_size = 30
+text = "Password"
 
 [node name="Password" type="LineEdit" parent="Background/LogInContainer/InputContainer"]
 layout_mode = 2
@@ -100,7 +113,6 @@ theme_override_colors/font_placeholder_color = Color(0.317647, 0.317647, 0.31764
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_6scy4")
-placeholder_text = "Password"
 
 [node name="LogInButton" type="Button" parent="Background/LogInContainer/InputContainer"]
 layout_mode = 2
@@ -123,7 +135,7 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -176.0
 offset_top = 25.0
-offset_right = -39.0
+offset_right = 288.0
 offset_bottom = 74.0
 grow_horizontal = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)

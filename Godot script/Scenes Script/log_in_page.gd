@@ -3,27 +3,40 @@ extends Control
 @onready var username_field: LineEdit = $LogInContainer/InputContainer/Username
 @onready var password_field: LineEdit = $LogInContainer/InputContainer/Password
 @onready var login_button: Button = $LogInContainer/InputContainer/LogInButton
-@onready var signup_button: Button = $LogInContainer/InputContainer/SignUpButton
 @onready var login_text: Label = $LogInContainer/InputContainer/LogInText
+@onready var sign_up_button: Button = $LogInContainer/InputContainer/SignUpButton
 
 var config := ConfigFile.new()
 const FILE_PATH := "user://players.cfg"
 
 func _ready():
-	# Confirm node types to avoid runtime errors
-	assert(password_field is LineEdit)
-	assert(username_field is LineEdit)
-
+	# Check if password field exists
+	if password_field == null:
+		push_error("Password field is null — check node path.")
+		return
+	
 	# Enable password masking
-	password_field.secret_mode_enabled = true
+	password_field.secret = true
 
 	# Load or create config file
 	var err = config.load(FILE_PATH)
 	if err != OK:
-		print("No config file found, creating new one.")
+		print("No config file found. Creating a new one.")
 		config.save(FILE_PATH)
 
-func _on_LogInButton_pressed():
+	# Connect signals (if not connected in editor)
+	login_button.pressed.connect(_on_login_button_pressed)
+	sign_up_button.pressed.connect(_on_sign_up_button_pressed)
+	username_field.focus_entered.connect(_on_username_focus)
+	password_field.focus_entered.connect(_on_password_focus)
+
+func _on_username_focus():
+	username_field.clear()
+
+func _on_password_focus():
+	password_field.clear()
+
+func _on_login_button_pressed():
 	var username = username_field.text.strip_edges().to_upper()
 	var password = password_field.text
 
@@ -38,14 +51,10 @@ func _on_LogInButton_pressed():
 	var saved_hash = config.get_value("users", username)
 	if saved_hash == password.sha256_text():
 		login_text.text = "Login successful!"
-		config.set_value("session", "last_user", username)
-		config.save(FILE_PATH)
-		get_tree().change_scene_to_file("res://scenes/Whole game/main_menu.tscn")
+		await get_tree().create_timer(0.5).timeout  # Short delay before changing scene
+		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 	else:
 		login_text.text = "Incorrect password."
 
-	username_field.clear()
-	password_field.clear()
-
-func _on_SignUpButton_pressed():
-	get_tree().change_scene_to_file("res://scenes/signup.tscn")
+func _on_sign_up_button_pressed():
+	get_tree().change_scene_to_file("res://Scenes/sign_up_page.tscn")
