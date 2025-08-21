@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://be8f8j1p4b8cx"]
+[gd_scene load_steps=9 format=3 uid="uid://be8f8j1p4b8cx"]
 
 [ext_resource type="Script" uid="uid://xmc4itnjal2a" path="res://Godot script/Scenes Script/home_page.gd" id="1_8unir"]
+[ext_resource type="FontFile" uid="uid://docxxo2smmwtj" path="res://Fonts/Helvetica-Bold.ttf" id="2_3e5ya"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwahq"]
 bg_color = Color(0, 0.0352941, 0.0980392, 1)
@@ -9,7 +10,7 @@ bg_color = Color(0, 0.0352941, 0.0980392, 1)
 bg_color = Color(0, 0.113725, 0.247059, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4cya"]
-bg_color = Color(0.0196078, 0.305882, 0.596078, 1)
+bg_color = Color(0.0392157, 0.431373, 0.827451, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -20,44 +21,8 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vasrq"]
-bg_color = Color(0.0196078, 0.305882, 0.596078, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xf1xk"]
-bg_color = Color(0.0196078, 0.305882, 0.596078, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bk6ph"]
-bg_color = Color(0.0196078, 0.305882, 0.596078, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ysxey"]
-bg_color = Color(0.0196078, 0.305882, 0.596078, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p61cv"]
+bg_color = Color(0.16043, 0.544711, 0.982296, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -129,34 +94,63 @@ theme_override_constants/separation = 30
 custom_minimum_size = Vector2(100, 75)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/hover = SubResource("StyleBoxFlat_h4cya")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_3e5ya")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_h4cya")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p61cv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_h4cya")
+text = "Profile"
 
 [node name="Button2" type="Button" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 75)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/hover = SubResource("StyleBoxFlat_vasrq")
-theme_override_styles/normal = SubResource("StyleBoxFlat_vasrq")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_3e5ya")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_h4cya")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p61cv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h4cya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_h4cya")
+text = "Shop"
 
 [node name="Button3" type="Button" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 75)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/hover = SubResource("StyleBoxFlat_xf1xk")
-theme_override_styles/normal = SubResource("StyleBoxFlat_xf1xk")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_3e5ya")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_h4cya")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p61cv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h4cya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_h4cya")
+text = "Inventory"
 
 [node name="Button4" type="Button" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/hover = SubResource("StyleBoxFlat_bk6ph")
-theme_override_styles/normal = SubResource("StyleBoxFlat_bk6ph")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_3e5ya")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_h4cya")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p61cv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h4cya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_h4cya")
+text = "Leaderboards"
 
 [node name="Button5" type="Button" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/hover = SubResource("StyleBoxFlat_ysxey")
-theme_override_styles/normal = SubResource("StyleBoxFlat_ysxey")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_3e5ya")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_h4cya")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p61cv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h4cya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_h4cya")
+text = "Settings"
 
 [node name="middle_container" type="MarginContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(746, 0)
