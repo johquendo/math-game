@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://be8f8j1p4b8cx"]
+[gd_scene load_steps=10 format=3 uid="uid://be8f8j1p4b8cx"]
 
 [ext_resource type="Script" uid="uid://xmc4itnjal2a" path="res://Godot script/Scenes Script/home_page.gd" id="1_8unir"]
 [ext_resource type="FontFile" uid="uid://docxxo2smmwtj" path="res://Fonts/Helvetica-Bold.ttf" id="2_3e5ya"]
@@ -35,6 +35,9 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7pekp"]
 bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3e5ya"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_257lx"]
 bg_color = Color(0, 0.113725, 0.247059, 1)
@@ -102,7 +105,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_p61cv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_h4cya")
 text = "Profile"
 
-[node name="Button2" type="Button" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+[node name="ShopButton" type="Button" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 75)
 layout_mode = 2
 size_flags_vertical = 3
@@ -165,6 +168,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_7pekp")
 
+[node name="ShopPanel" type="Panel" parent="HBoxContainer/middle_container"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3e5ya")
+
 [node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 0
@@ -178,3 +186,5 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_257lx")
+
+[connection signal="button_down" from="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/ShopButton" to="." method="_on_shop_button_button_down"]

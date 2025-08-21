@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dc6y1x6wm3flf"]
+[gd_scene load_steps=9 format=3 uid="uid://dojqniic322hs"]
 
 [ext_resource type="FontFile" uid="uid://docxxo2smmwtj" path="res://Fonts/Helvetica-Bold.ttf" id="1_7ltar"]
 [ext_resource type="Script" uid="uid://dwt8ccrpkobrw" path="res://Godot script/Scenes Script/sign_up_page.gd" id="1_kljoo"]
@@ -33,7 +33,7 @@ border_blend = true
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsljv"]
 bg_color = Color(0.0392157, 0.431373, 0.827451, 1)
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
