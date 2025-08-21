@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dc6y1x6wm3flf"]
+[gd_scene load_steps=8 format=3 uid="uid://dc6y1x6wm3flf"]
 
 [ext_resource type="FontFile" uid="uid://docxxo2smmwtj" path="res://Fonts/Helvetica-Bold.ttf" id="1_7ltar"]
+[ext_resource type="Texture2D" uid="uid://cirigx8w17xfk" path="res://Images/game_logo.png" id="2_h1pxh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skapt"]
 bg_color = Color(0, 0.0352941, 0.0980392, 1)
@@ -123,10 +124,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -87.0
-offset_top = 14.0
-offset_right = 87.0
-offset_bottom = 64.0
+offset_left = -173.0
+offset_top = 21.0
+offset_right = 1.0
+offset_bottom = 71.0
 grow_horizontal = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("1_7ltar")
@@ -169,3 +170,12 @@ grow_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 35
 text = "or"
+
+[node name="GameLogo" type="TextureRect" parent="MainBackground/LogInContainer"]
+modulate = Color(1, 1, 1, 0.960784)
+offset_left = -8.0
+offset_top = -40.0
+offset_right = 158.0
+offset_bottom = 126.0
+texture = ExtResource("2_h1pxh")
+expand_mode = 1
