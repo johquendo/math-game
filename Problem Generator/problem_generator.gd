@@ -24,8 +24,6 @@ var current_item = {
 }
 
 func _ready():
-	# Connect buttons to functions
-	generate_button.pressed.connect(_on_generate_button_pressed)
 	change_difficulty_button.pressed.connect(_on_difficulty_button_pressed)
 	
 	# Hide all shapes initially

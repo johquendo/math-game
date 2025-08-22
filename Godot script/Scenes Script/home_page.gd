@@ -1,10 +1,10 @@
 extends Control
 
-@onready var left_panel = $HBoxContainer/LeftPanel
-@onready var right_panel = $HBoxContainer/RightPanel
-@onready var middle_container = $HBoxContainer/MiddleContainer
-@onready var shop_panel = $HBoxContainer/middle_container/ShopPanel
-@onready var shop_exit = $HBoxContainer/middle_container/ShopPanel/ShopButton
+@onready var left_panel: Panel = $HBoxContainer/MarginContainer/left_panel
+@onready var right_panel: Panel = $HBoxContainer/MarginContainer2/right_panel
+@onready var middle_container: MarginContainer = $HBoxContainer/middle_container
+@onready var shop_panel: Panel = $HBoxContainer/middle_container/ShopPanel
+@onready var shop_exit: Button = $HBoxContainer/middle_container/ShopPanel/ShopExit
 @onready var inventory_panel = $HBoxContainer/middle_container/InventoryPanel
 @onready var leaderboards_panel = $HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/LeaderboardsButton
 @onready var settings_panel = $HBoxContainer/middle_container/SettingsPanel

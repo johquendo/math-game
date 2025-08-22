@@ -24,7 +24,7 @@ func _ready():
 	
 	# Connect signals
 	create_button.pressed.connect(_on_CreateAccountBut_pressed)
-	back_button.pressed.connect(_on_button_pressed)
+	
 	
 	# Connect enter key submission
 	username_field.text_submitted.connect(_on_enter_pressed)
