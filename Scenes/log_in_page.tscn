@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://dkyp616tpv48d"]
+[gd_scene load_steps=14 format=3 uid="uid://dkyp616tpv48d"]
 
 [ext_resource type="Script" uid="uid://23seghq6pqax" path="res://Godot script/Scenes Script/log_in_page.gd" id="1_b3m5s"]
-[ext_resource type="FontFile" uid="uid://docxxo2smmwtj" path="res://Fonts/Helvetica-Bold.ttf" id="2_823ph"]
 [ext_resource type="FontFile" uid="uid://cpp8fwktl7xll" path="res://Fonts/helvetica-rounded-bold-5871d05ead8de.otf" id="3_823ph"]
 [ext_resource type="Texture2D" uid="uid://cirigx8w17xfk" path="res://Images/game_logo.png" id="3_mv1ju"]
 [ext_resource type="FontFile" uid="uid://cvb2ldnxn2qea" path="res://Fonts/Helvetica-BoldOblique.ttf" id="5_mv1ju"]
@@ -81,77 +80,62 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xxp7a")
 
-[node name="InputContainer" type="VBoxContainer" parent="Background/LogInContainer"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -177.0
-offset_top = -130.0
-offset_right = 173.0
-offset_bottom = 68.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 12
+[node name="GameLogo" type="TextureRect" parent="Background"]
+modulate = Color(1, 1, 1, 0.960784)
+z_index = 10
+layout_mode = 0
+offset_left = 350.0
+offset_top = 81.0
+offset_right = 535.0
+offset_bottom = 238.0
+texture = ExtResource("3_mv1ju")
+expand_mode = 1
 
-[node name="Label" type="Label" parent="Background/LogInContainer/InputContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_823ph")
-theme_override_font_sizes/font_size = 30
-text = "Username"
-
-[node name="Username" type="LineEdit" parent="Background/LogInContainer/InputContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_v5olu")
-
-[node name="Label2" type="Label" parent="Background/LogInContainer/InputContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_823ph")
-theme_override_font_sizes/font_size = 30
-text = "Password"
-
-[node name="Password" type="LineEdit" parent="Background/LogInContainer/InputContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_6scy4")
-
-[node name="LogInText" type="Label" parent="Background/LogInContainer"]
+[node name="LogInText" type="Label" parent="Background"]
+z_index = 10
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -80.0
-offset_top = 13.0
-offset_right = 188.0
-offset_bottom = 62.0
+offset_left = -42.0
+offset_top = 142.0
+offset_right = 88.0
+offset_bottom = 191.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_823ph")
 theme_override_font_sizes/font_size = 30
 text = "Log In"
 
-[node name="GameLogo" type="TextureRect" parent="Background/LogInContainer"]
-modulate = Color(1, 1, 1, 0.960784)
-layout_mode = 0
-offset_left = -26.0
-offset_top = -43.0
-offset_right = 159.0
-offset_bottom = 114.0
-texture = ExtResource("3_mv1ju")
-expand_mode = 1
+[node name="Username" type="LineEdit" parent="Background"]
+z_index = 10
+layout_mode = 2
+offset_left = 399.0
+offset_top = 194.0
+offset_right = 749.0
+offset_bottom = 287.0
+size_flags_vertical = 3
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_v5olu")
+text = "Username"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Background/LogInContainer"]
+[node name="Password" type="LineEdit" parent="Background"]
+z_index = 10
+layout_mode = 2
+offset_left = 399.0
+offset_top = 300.0
+offset_right = 749.0
+offset_bottom = 393.0
+size_flags_vertical = 3
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_6scy4")
+text = "Password"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background"]
 clip_contents = true
 layout_mode = 1
 anchors_preset = 8
@@ -160,14 +144,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -168.0
-offset_top = 80.0
+offset_top = 96.0
 offset_right = 164.0
-offset_bottom = 147.0
+offset_bottom = 163.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 90
 
-[node name="Sign_in_button" type="Button" parent="Background/LogInContainer/HBoxContainer"]
+[node name="Sign_in_button" type="Button" parent="Background/HBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_823ph")
@@ -176,7 +160,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_823ph")
 theme_override_styles/normal = SubResource("StyleBoxFlat_mv1ju")
 text = "Sign up"
 
-[node name="Log_in_button" type="Button" parent="Background/LogInContainer/HBoxContainer"]
+[node name="Log_in_button" type="Button" parent="Background/HBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_823ph")
@@ -185,12 +169,13 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_aq84k")
 theme_override_styles/normal = SubResource("StyleBoxFlat_m4ugq")
 text = "Log in"
 
-[node name="Warning_text" type="Label" parent="Background/LogInContainer"]
+[node name="Warning_text" type="Label" parent="Background"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.1
-offset_left = -2.0
-offset_top = -52.0
-offset_right = 358.0
+offset_left = 374.0
+offset_top = 72.0
+offset_right = 734.0
+offset_bottom = 124.0
 theme_override_fonts/font = ExtResource("5_mv1ju")
 theme_override_font_sizes/font_size = 25

@@ -42,9 +42,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -328.0
-offset_top = -2.0
+offset_top = 20.0
 offset_right = 337.0
-offset_bottom = 77.0
+offset_bottom = 99.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.784314)
@@ -102,4 +102,8 @@ grow_vertical = 2
 texture = ExtResource("2_rrn07")
 expand_mode = 1
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="mouse_entered" from="StartButton" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="StartButton" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

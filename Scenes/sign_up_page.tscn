@@ -60,6 +60,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_skapt")
 
+[node name="GameLogo" type="TextureRect" parent="MainBackground"]
+modulate = Color(1, 1, 1, 0.960784)
+z_index = 10
+layout_mode = 0
+offset_left = 251.0
+offset_top = 21.0
+offset_right = 433.0
+offset_bottom = 187.0
+texture = ExtResource("2_h1pxh")
+expand_mode = 1
+
 [node name="LogInContainer" type="Panel" parent="MainBackground"]
 layout_mode = 1
 anchors_preset = 8
@@ -155,23 +166,13 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -175.0
 offset_top = 26.0
-offset_right = 263.0
-offset_bottom = 76.0
+offset_right = -45.0
+offset_bottom = 75.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_n38k3")
 theme_override_font_sizes/font_size = 20
 text = "Sign Up"
-
-[node name="GameLogo" type="TextureRect" parent="MainBackground/LogInContainer"]
-modulate = Color(1, 1, 1, 0.960784)
-layout_mode = 0
-offset_left = -24.0
-offset_top = -40.0
-offset_right = 158.0
-offset_bottom = 126.0
-texture = ExtResource("2_h1pxh")
-expand_mode = 1
 
 [connection signal="pressed" from="MainBackground/LogInContainer/InputContainer/CreateAccountButton" to="." method="_on_create_account_button_pressed"]
 [connection signal="pressed" from="MainBackground/LogInContainer/InputContainer/Button" to="." method="_on_button_pressed"]
