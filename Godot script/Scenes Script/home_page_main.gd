@@ -15,7 +15,7 @@ func _ready() -> void:
 	main.visible = true
 	shopui.visible = false
 	countdown_label.text = _format_time(int(remaining_time))
-
+	
 func _on_settings_pressed() -> void:
 	main.visible = false
 	shopui.visible = true

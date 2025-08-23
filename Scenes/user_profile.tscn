@@ -1,0 +1,164 @@
+[gd_scene load_steps=15 format=3 uid="uid://c2eje31cou2hv"]
+
+[ext_resource type="Texture2D" uid="uid://cu4mg65wmsy16" path="res://Images/pfptemp.jpg" id="1_om2v6"]
+[ext_resource type="FontFile" uid="uid://docxxo2smmwtj" path="res://Fonts/Helvetica-Bold.ttf" id="2_btnv2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fiank"]
+bg_color = Color(0, 0.0352941, 0.0980392, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_btnv2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0nwtb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jnvs6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l2ps4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ge722"]
+
+[sub_resource type="Theme" id="Theme_fyma7"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_btnv2")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_0nwtb")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_jnvs6")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_l2ps4")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_ge722")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_om2v6"]
+bg_color = Color(0, 0.113725, 0.247059, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0nwtb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jnvs6"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2ps4"]
+bg_color = Color(0.0156863, 0.207843, 0.415686, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btnv2"]
+bg_color = Color(0, 0.0352941, 0.0980392, 1)
+
+[node name="UserProfile" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fiank")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -455.0
+offset_top = -560.0
+offset_right = 455.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_fyma7")
+
+[node name="ProfileItemsContainer" type="VBoxContainer" parent="Background/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 25
+
+[node name="MainProfileContainer" type="Panel" parent="Background/ScrollContainer/ProfileItemsContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_om2v6")
+
+[node name="ProfileMargin" type="MarginContainer" parent="Background/ScrollContainer/ProfileItemsContainer/MainProfileContainer"]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 170.0
+
+[node name="ProfilePictureContainer" type="Panel" parent="Background/ScrollContainer/ProfileItemsContainer/MainProfileContainer/ProfileMargin"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_0nwtb")
+
+[node name="ProfilePictureRound" type="PanelContainer" parent="Background/ScrollContainer/ProfileItemsContainer/MainProfileContainer/ProfileMargin/ProfilePictureContainer"]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -65.0
+offset_right = 65.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jnvs6")
+
+[node name="ProfilePicture" type="TextureRect" parent="Background/ScrollContainer/ProfileItemsContainer/MainProfileContainer/ProfileMargin/ProfilePictureContainer/ProfilePictureRound"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_om2v6")
+expand_mode = 1
+
+[node name="ButtonMargin" type="MarginContainer" parent="Background/ScrollContainer/ProfileItemsContainer/MainProfileContainer"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_bottom = 100.0
+grow_horizontal = 0
+
+[node name="Button" type="Button" parent="Background/ScrollContainer/ProfileItemsContainer/MainProfileContainer/ButtonMargin"]
+custom_minimum_size = Vector2(160, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_btnv2")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_l2ps4")
+text = "Visit Plot"
+
+[node name="ProfileStatsContainer" type="Panel" parent="Background/ScrollContainer/ProfileItemsContainer"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_om2v6")
+
+[node name="Footer" type="Panel" parent="Background/ScrollContainer/ProfileItemsContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_btnv2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/ScrollContainer/ProfileItemsContainer"]
+layout_mode = 2
