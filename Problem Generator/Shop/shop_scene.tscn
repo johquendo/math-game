@@ -1,0 +1,102 @@
+[gd_scene load_steps=5 format=3 uid="uid://s8ws3ocsofll"]
+
+[ext_resource type="Script" uid="uid://cr0ld030fqmh8" path="res://Shop/ShopRestockSystem.gd" id="1_m4aye"]
+[ext_resource type="Script" uid="uid://i11lkvdwa0ms" path="res://Shop/GameManager.gd" id="1_skox4"]
+[ext_resource type="Script" uid="uid://07avvaxpb2xt" path="res://ProblemGenerator.gd" id="2_c2fyr"]
+[ext_resource type="Script" uid="uid://csiirhl08dyll" path="res://Shop/SimpleUi.gd" id="4_xxwuv"]
+
+[node name="ShopScene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ShopRestockSystem" type="Node" parent="."]
+script = ExtResource("1_m4aye")
+
+[node name="ProblemGenerator" type="Control" parent="."]
+anchors_preset = 0
+script = ExtResource("2_c2fyr")
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("1_skox4")
+
+[node name="UI" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_xxwuv")
+
+[node name="StatusLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 320.0
+offset_bottom = 50.0
+text = "Welcome to the Math Shop"
+
+[node name="TimerLabel" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 60.0
+offset_right = 180.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restock Timer"
+
+[node name="InventoryContainer" type="VBoxContainer" parent="UI"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 100.0
+offset_right = 220.0
+offset_bottom = 300.0
+theme_override_constants/separation = 10
+
+[node name="ManualRestock" type="Button" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 218.0
+offset_top = 58.0
+offset_right = 328.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Manual Restock"
+
+[node name="TestButtons" type="HBoxContainer" parent="UI"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 300.0
+offset_right = 686.0
+offset_bottom = 340.0
+
+[node name="BuyAdditionButton" type="Button" parent="UI/TestButtons"]
+layout_mode = 2
+text = "Buy Addition"
+
+[node name="BuySubtractionButton" type="Button" parent="UI/TestButtons"]
+layout_mode = 2
+text = "Buy Subtraction"
+
+[node name="BuyMultiplicationButton" type="Button" parent="UI/TestButtons"]
+layout_mode = 2
+text = "Buy Multiplication"
+
+[node name="BuyDivisionButton" type="Button" parent="UI/TestButtons"]
+layout_mode = 2
+text = "Buy Division"
+
+[node name="BuyPolynomialButton" type="Button" parent="UI/TestButtons"]
+layout_mode = 2
+text = "Buy Polynomial"
+
+[connection signal="pressed" from="UI/ManualRestock" to="GameManager" method="test_manual_restock"]
+[connection signal="pressed" from="UI/TestButtons/BuyAdditionButton" to="GameManager" method="test_buy_addition"]
+[connection signal="pressed" from="UI/TestButtons/BuySubtractionButton" to="GameManager" method="test_buy_subtraction"]
+[connection signal="pressed" from="UI/TestButtons/BuyMultiplicationButton" to="GameManager" method="test_buy_multiplication"]
+[connection signal="pressed" from="UI/TestButtons/BuyDivisionButton" to="GameManager" method="test_buy_division"]
+[connection signal="pressed" from="UI/TestButtons/BuyPolynomialButton" to="GameManager" method="test_buy_polynomials"]
