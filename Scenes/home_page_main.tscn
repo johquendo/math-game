@@ -56,19 +56,6 @@ offset_bottom = 648.0
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fscwk")
 
-[node name="Button" type="Button" parent="left_container/Panel"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 644.0
-offset_top = 48.0
-offset_right = 689.0
-offset_bottom = 87.0
-grow_horizontal = 0
-size_flags_horizontal = 8
-text = "Back"
-
 [node name="middle container" type="PanelContainer" parent="."]
 layout_mode = 0
 offset_left = 221.0
@@ -306,6 +293,7 @@ theme_override_fonts/font = ExtResource("2_mykhn")
 text = "back"
 
 [node name="settings" type="Panel" parent="."]
+visible = false
 offset_left = 274.0
 offset_top = 47.0
 offset_right = 890.0
@@ -320,8 +308,8 @@ offset_bottom = 44.0
 theme_override_fonts/font = ExtResource("2_mykhn")
 text = "back"
 
-[connection signal="pressed" from="left_container/Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="button_down" from="main/shop" to="." method="_on_shop_button_down"]
 [connection signal="button_down" from="main/settings" to="." method="_on_settings_button_down"]
 [connection signal="button_down" from="shopui/back" to="." method="_on_back_button_down"]
-[connection signal="pressed" from="settings/backk" to="." method="_on_backk_pressed"]
+[connection signal="pressed" from="shopui/back" to="." method="_on_back_pressed"]
+[connection signal="button_down" from="settings/backk" to="." method="_on_backk_button_down"]
