@@ -1,4 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://boatdpcy35yen"]
+[gd_scene load_steps=9 format=3 uid="uid://boatdpcy35yen"]
+
+[ext_resource type="FontFile" uid="uid://cmqyf6t67qmpu" path="res://Fonts/Gildeon.otf" id="1_dt3o4"]
+[ext_resource type="FontFile" uid="uid://docxxo2smmwtj" path="res://Fonts/Helvetica-Bold.ttf" id="2_mykhn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w63dr"]
 bg_color = Color(0, 0.0352941, 0.0980392, 1)
@@ -170,6 +173,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_dt3o4")
 theme_override_font_sizes/font_size = 35
 text = "New Hoes On Stock"
 
@@ -180,6 +184,7 @@ offset_top = 24.0
 offset_right = 396.0
 offset_bottom = 56.0
 size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_dt3o4")
 theme_override_font_sizes/font_size = 39
 text = "10"
 horizontal_alignment = 1
@@ -203,6 +208,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_dt3o4")
 theme_override_font_sizes/font_size = 60
 text = "BUY"
 horizontal_alignment = 1
@@ -221,6 +227,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_dt3o4")
 theme_override_font_sizes/font_size = 60
 text = "GIFT"
 horizontal_alignment = 1
@@ -239,6 +246,7 @@ offset_left = 16.0
 offset_top = 85.0
 offset_right = 105.0
 offset_bottom = 106.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
 theme_override_font_sizes/font_size = 25
 text = "On Stock"
 
@@ -248,6 +256,7 @@ offset_left = 448.0
 offset_top = 8.0
 offset_right = 513.0
 offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
 theme_override_font_sizes/font_size = 19
 text = "Common"
 
@@ -257,6 +266,7 @@ offset_left = 151.0
 offset_top = 59.0
 offset_right = 523.0
 offset_bottom = 132.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
 theme_override_font_sizes/font_size = 19
 text = "Addition is the process of combining two or 
 more numbers to find their total or sum.
@@ -269,6 +279,7 @@ offset_left = 16.0
 offset_top = 111.0
 offset_right = 79.0
 offset_bottom = 132.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
 theme_override_font_sizes/font_size = 25
 text = "$1000"
 
@@ -278,6 +289,7 @@ offset_left = 10.0
 offset_top = 9.0
 offset_right = 238.0
 offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
 theme_override_font_sizes/font_size = 25
 text = "Addition & Subtraction"
 
@@ -287,6 +299,7 @@ offset_left = 535.0
 offset_top = 2.0
 offset_right = 613.0
 offset_bottom = 44.0
+theme_override_fonts/font = ExtResource("2_mykhn")
 text = "back"
 
 [connection signal="pressed" from="left_container/Panel/Button" to="." method="_on_button_pressed"]
