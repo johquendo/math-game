@@ -155,6 +155,7 @@ action_mode = 0
 text = "S E T T I N G S"
 
 [node name="shopui" type="Panel" parent="."]
+visible = false
 layout_mode = 2
 offset_left = 273.0
 offset_top = 48.0
@@ -304,6 +305,23 @@ offset_bottom = 44.0
 theme_override_fonts/font = ExtResource("2_mykhn")
 text = "back"
 
+[node name="settings" type="Panel" parent="."]
+offset_left = 274.0
+offset_top = 47.0
+offset_right = 890.0
+offset_bottom = 585.0
+
+[node name="backk" type="Button" parent="settings"]
+layout_mode = 2
+offset_left = 535.0
+offset_top = 2.0
+offset_right = 613.0
+offset_bottom = 44.0
+theme_override_fonts/font = ExtResource("2_mykhn")
+text = "back"
+
 [connection signal="pressed" from="left_container/Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="button_down" from="main/shop" to="." method="_on_shop_button_down"]
+[connection signal="button_down" from="main/settings" to="." method="_on_settings_button_down"]
 [connection signal="button_down" from="shopui/back" to="." method="_on_back_button_down"]
+[connection signal="pressed" from="settings/backk" to="." method="_on_backk_pressed"]

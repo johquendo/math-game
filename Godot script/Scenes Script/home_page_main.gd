@@ -5,6 +5,7 @@ extends Control
 @onready var main: VBoxContainer = $main
 @onready var shopui: Panel = $shopui
 @onready var countdown_label: Label = $shopui/CountdownLabel
+@onready var settings: Button = $main/settings
 
 # Timer variables
 const DURATION := 10 * 60 # 10 minutes in seconds
@@ -16,10 +17,6 @@ func _ready() -> void:
 	shopui.visible = false
 	countdown_label.text = _format_time(int(remaining_time))
 	
-func _on_settings_pressed() -> void:
-	main.visible = false
-	shopui.visible = true
-
 func _on_button_pressed() -> void:
 	_ready()
 
@@ -40,3 +37,14 @@ func _format_time(seconds: int) -> String:
 	var minutes = seconds / 60
 	var secs = seconds % 60
 	return "%02d:%02d" % [minutes, secs]
+
+# --- Settings Ui ---
+func _on_settings_button_down() -> void:
+	settings.visible = true
+
+func _readyy():
+	settings.visible = false
+	main.visible = true
+	
+func _on_backk_pressed() -> void:
+	_readyy()
