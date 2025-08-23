@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://diwnqww1sk7ai"]
 
-[ext_resource type="Script" path="res://Godot script/Scenes Script/whiteboard_app.gd" id="1_jy27o"]
+[ext_resource type="Script" uid="uid://d1nptvy43addk" path="res://Godot script/Scenes Script/whiteboard_app.gd" id="1_jy27o"]
 
 [node name="WhiteboardApp" type="Control"]
 layout_mode = 3
