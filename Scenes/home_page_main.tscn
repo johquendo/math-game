@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://boatdpcy35yen"]
+[gd_scene load_steps=10 format=3 uid="uid://boatdpcy35yen"]
 
 [ext_resource type="FontFile" uid="uid://cmqyf6t67qmpu" path="res://Fonts/Gildeon.otf" id="1_dt3o4"]
+[ext_resource type="Script" uid="uid://dskct3u17yukd" path="res://Godot script/Scenes Script/home_page_main.gd" id="1_mykhn"]
 [ext_resource type="FontFile" uid="uid://docxxo2smmwtj" path="res://Fonts/Helvetica-Bold.ttf" id="2_mykhn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w63dr"]
@@ -28,6 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mykhn")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
