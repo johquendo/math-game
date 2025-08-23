@@ -1,0 +1,312 @@
+[gd_scene load_steps=9 format=3 uid="uid://boatdpcy35yen"]
+
+[ext_resource type="FontFile" uid="uid://b3040ng33djpa" path="res://Fonts/Gildeon.otf" id="1_fscwk"]
+[ext_resource type="Script" uid="uid://spek3vwf4d4x" path="res://shop.gd" id="1_l4r40"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w63dr"]
+bg_color = Color(0, 0.0352941, 0.0980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fscwk"]
+bg_color = Color(0, 0.113725, 0.247059, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4r40"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxujh"]
+bg_color = Color(0.0392157, 0.431373, 0.827451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_du886"]
+bg_color = Color(0.0392157, 0.431373, 0.827451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qvybl"]
+bg_color = Color(0.0392157, 0.431373, 0.827451, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l4r40")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w63dr")
+
+[node name="right_container" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_left = 952.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Panel" type="Panel" parent="right_container"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fscwk")
+
+[node name="left_container" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 648.0
+
+[node name="Panel" type="Panel" parent="left_container"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fscwk")
+
+[node name="Button" type="Button" parent="left_container/Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 644.0
+offset_top = 48.0
+offset_right = 689.0
+offset_bottom = 87.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+text = "Back"
+
+[node name="middle container" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 16.0
+offset_right = 927.0
+offset_bottom = 624.0
+
+[node name="Panel" type="Panel" parent="middle container"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l4r40")
+
+[node name="main" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 36.0
+offset_right = 190.0
+offset_bottom = 227.0
+scale = Vector2(1, 1.5)
+theme_override_constants/separation = 15
+
+[node name="profile" type="Button" parent="main"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_constants/h_separation = 22
+theme_override_constants/icon_max_width = 0
+theme_override_fonts/font = ExtResource("1_fscwk")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/focus = SubResource("StyleBoxFlat_dxujh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_du886")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qvybl")
+action_mode = 0
+text = "P R O F I L E"
+
+[node name="shop" type="Button" parent="main"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_constants/h_separation = 22
+theme_override_constants/icon_max_width = 0
+theme_override_fonts/font = ExtResource("1_fscwk")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/focus = SubResource("StyleBoxFlat_dxujh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_du886")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qvybl")
+action_mode = 0
+text = "S H O P"
+
+[node name="inventory" type="Button" parent="main"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_constants/h_separation = 22
+theme_override_constants/icon_max_width = 0
+theme_override_fonts/font = ExtResource("1_fscwk")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/focus = SubResource("StyleBoxFlat_dxujh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_du886")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qvybl")
+action_mode = 0
+text = "I N V E N T O R Y"
+
+[node name="leaderboards" type="Button" parent="main"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_constants/h_separation = 22
+theme_override_constants/icon_max_width = 0
+theme_override_fonts/font = ExtResource("1_fscwk")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/focus = SubResource("StyleBoxFlat_dxujh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_du886")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qvybl")
+action_mode = 0
+text = "L E A D E R B O A R D S"
+
+[node name="settings" type="Button" parent="main"]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_constants/h_separation = 22
+theme_override_constants/icon_max_width = 0
+theme_override_fonts/font = ExtResource("1_fscwk")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/focus = SubResource("StyleBoxFlat_dxujh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_du886")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qvybl")
+action_mode = 0
+text = "S E T T I N G S"
+
+[node name="shopui" type="Panel" parent="."]
+layout_mode = 2
+offset_left = 273.0
+offset_top = 48.0
+offset_right = 889.0
+offset_bottom = 586.0
+
+[node name="Panel3" type="Panel" parent="shopui"]
+layout_mode = 2
+offset_left = 22.0
+offset_top = 14.0
+offset_right = 304.0
+offset_bottom = 57.0
+
+[node name="TextEdit" type="TextEdit" parent="shopui/Panel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_fscwk")
+theme_override_font_sizes/font_size = 35
+text = "New Hoes On Stock"
+
+[node name="CountdownLabel" type="Label" parent="shopui"]
+layout_mode = 2
+offset_left = 339.0
+offset_top = 24.0
+offset_right = 396.0
+offset_bottom = 56.0
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_fscwk")
+theme_override_font_sizes/font_size = 39
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CountdownTimer" type="Timer" parent="shopui"]
+wait_time = 600.0
+
+[node name="Panel4" type="Panel" parent="shopui"]
+layout_mode = 2
+offset_left = 42.0
+offset_top = 249.0
+offset_right = 260.0
+offset_bottom = 320.0
+
+[node name="Label2" type="Label" parent="shopui/Panel4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_fscwk")
+theme_override_font_sizes/font_size = 60
+text = "BUY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="shopui/Panel4/Label2"]
+layout_mode = 2
+offset_left = 255.0
+offset_right = 473.0
+offset_bottom = 71.0
+
+[node name="Label" type="Label" parent="shopui/Panel4/Label2/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_fscwk")
+theme_override_font_sizes/font_size = 60
+text = "GIFT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="shopui/Panel4/Label2/Panel"]
+layout_mode = 2
+offset_left = -270.0
+offset_top = -152.0
+offset_right = 256.0
+offset_bottom = -14.0
+
+[node name="Label" type="Label" parent="shopui/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 85.0
+offset_right = 105.0
+offset_bottom = 106.0
+theme_override_fonts/font = ExtResource("1_fscwk")
+theme_override_font_sizes/font_size = 25
+text = "On Stock"
+
+[node name="Label4" type="Label" parent="shopui/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 8.0
+offset_right = 513.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("1_fscwk")
+theme_override_font_sizes/font_size = 19
+text = "Common"
+
+[node name="Label5" type="Label" parent="shopui/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 59.0
+offset_right = 523.0
+offset_bottom = 132.0
+theme_override_fonts/font = ExtResource("1_fscwk")
+theme_override_font_sizes/font_size = 19
+text = "Addition is the process of combining two or 
+more numbers to find their total or sum.
+Subtraction is the process of taking one number 
+away from another to find the difference."
+
+[node name="Label2" type="Label" parent="shopui/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 111.0
+offset_right = 79.0
+offset_bottom = 132.0
+theme_override_fonts/font = ExtResource("1_fscwk")
+theme_override_font_sizes/font_size = 25
+text = "$1000"
+
+[node name="Label3" type="Label" parent="shopui/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 9.0
+offset_right = 238.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("1_fscwk")
+theme_override_font_sizes/font_size = 25
+text = "Addition & Subtraction"
+
+[node name="back" type="Button" parent="shopui"]
+layout_mode = 2
+offset_left = 535.0
+offset_top = 2.0
+offset_right = 613.0
+offset_bottom = 44.0
+text = "back"
+
+[connection signal="pressed" from="left_container/Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="button_down" from="main/shop" to="." method="_on_shop_button_down"]
+[connection signal="button_down" from="shopui/back" to="." method="_on_back_button_down"]
