@@ -4,17 +4,35 @@ extends Control
 @onready var control: Control = $"."  
 @onready var main: VBoxContainer = $main
 @onready var shopui: Panel = $shopui
-@onready var countdown_label: Label = $shopui/CountdownLabel
+@onready var countdown_label = _find_node_recursive("TimerLabel")
 
-# Timer variables
-const DURATION := 10 * 60 # 10 minutes in seconds
-var remaining_time: float = DURATION
+# Remove the timer variables - we'll use ShopRestockSystem's timer instead
+
+# Helper function to find nodes by name recursively
+func _find_node_recursive(node_name: String) -> Node:
+	return _find_node_recursive_helper(get_tree().root, node_name)
+
+func _find_node_recursive_helper(node: Node, node_name: String) -> Node:
+	if node.name == node_name:
+		return node
+	
+	for child in node.get_children():
+		var result = _find_node_recursive_helper(child, node_name)
+		if result:
+			return result
+	
+	return null
 
 # --- UI Logic ---
 func _ready() -> void:
 	main.visible = true
 	shopui.visible = false
-	countdown_label.text = _format_time(int(remaining_time))
+	
+	# Don't set initial text here - GameManager will handle it
+	if countdown_label:
+		print("TimerLabel found at: ", countdown_label.get_path())
+	else:
+		print("Warning: TimerLabel not found!")
 	
 func _on_settings_pressed() -> void:
 	main.visible = false
@@ -29,14 +47,4 @@ func _on_shop_button_down() -> void:
 func _on_back_button_down() -> void:
 	shopui.visible = false
 
-# --- Countdown Timer (real-time) ---
-func _process(delta: float) -> void:
-	remaining_time -= delta
-	if remaining_time <= 0:
-		remaining_time = DURATION  # reset to 10 minutes
-	countdown_label.text = _format_time(int(remaining_time))
-
-func _format_time(seconds: int) -> String:
-	var minutes = seconds / 60
-	var secs = seconds % 60
-	return "%02d:%02d" % [minutes, secs]
+# REMOVE the _process function entirely - GameManager handles timer updates

@@ -1,8 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://boatdpcy35yen"]
+[gd_scene load_steps=14 format=3 uid="uid://boatdpcy35yen"]
 
 [ext_resource type="FontFile" uid="uid://cmqyf6t67qmpu" path="res://Fonts/Gildeon.otf" id="1_dt3o4"]
 [ext_resource type="Script" uid="uid://dskct3u17yukd" path="res://Godot script/Scenes Script/home_page_main.gd" id="1_mykhn"]
+[ext_resource type="Script" uid="uid://cr0ld030fqmh8" path="res://Shop/ShopRestockSystem.gd" id="2_2d120"]
 [ext_resource type="FontFile" uid="uid://docxxo2smmwtj" path="res://Fonts/Helvetica-Bold.ttf" id="2_mykhn"]
+[ext_resource type="Script" uid="uid://07avvaxpb2xt" path="res://Shop/ProblemGenerator.gd" id="3_w1xlq"]
+[ext_resource type="Script" uid="uid://i11lkvdwa0ms" path="res://Shop/GameManager.gd" id="4_86lx5"]
+[ext_resource type="Script" uid="uid://csiirhl08dyll" path="res://Shop/SimpleUi.gd" id="5_0maj0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w63dr"]
 bg_color = Color(0, 0.0352941, 0.0980392, 1)
@@ -161,6 +165,138 @@ offset_top = 48.0
 offset_right = 889.0
 offset_bottom = 586.0
 
+[node name="ShopRestockSystem" type="Node" parent="shopui"]
+script = ExtResource("2_2d120")
+
+[node name="ProblemGenerator" type="Control" parent="shopui"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_w1xlq")
+
+[node name="GameManager" type="Node" parent="shopui"]
+script = ExtResource("4_86lx5")
+
+[node name="UI" type="Control" parent="shopui"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_0maj0")
+
+[node name="BuyCommon" type="Button" parent="shopui/UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = 248.0
+offset_right = 42.0
+offset_bottom = 248.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5.45804, 1.83316)
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 19
+text = "
+"
+
+[node name="Panel" type="Panel" parent="shopui/UI"]
+offset_left = 297.0
+offset_top = 249.0
+offset_right = 515.0
+offset_bottom = 320.0
+
+[node name="Label" type="Label" parent="shopui/UI/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 60
+text = "GIFT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="shopui/UI/Panel/Label"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -255.0
+offset_right = -255.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 60
+text = "BUY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="shopui/UI/Panel"]
+layout_mode = 2
+offset_left = -270.0
+offset_top = -152.0
+offset_right = 256.0
+offset_bottom = -14.0
+
+[node name="StockLabel" type="Label" parent="shopui/UI/Panel/Panel2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 85.0
+offset_right = 105.0
+offset_bottom = 106.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 25
+text = "On Stock"
+
+[node name="Description" type="Label" parent="shopui/UI/Panel/Panel2"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 59.0
+offset_right = 523.0
+offset_bottom = 132.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 19
+text = "Addition is the process of combining two or 
+more numbers to find their total or sum.
+Subtraction is the process of taking one number 
+away from another to find the difference."
+
+[node name="Price" type="Label" parent="shopui/UI/Panel/Panel2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 111.0
+offset_right = 79.0
+offset_bottom = 132.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 25
+text = "$1000"
+
+[node name="ItemName" type="Label" parent="shopui/UI/Panel/Panel2"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 9.0
+offset_right = 238.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 25
+text = "Addition & Subtraction"
+
+[node name="TimerLabel" type="Label" parent="shopui/UI"]
+layout_mode = 2
+offset_left = 18.0
+offset_top = 60.0
+offset_right = 75.0
+offset_bottom = 92.0
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 39
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Panel3" type="Panel" parent="shopui"]
 layout_mode = 2
 offset_left = 22.0
@@ -179,122 +315,6 @@ theme_override_fonts/font = ExtResource("1_dt3o4")
 theme_override_font_sizes/font_size = 35
 text = "New Hoes On Stock"
 
-[node name="CountdownLabel" type="Label" parent="shopui"]
-layout_mode = 2
-offset_left = 339.0
-offset_top = 24.0
-offset_right = 396.0
-offset_bottom = 56.0
-size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("1_dt3o4")
-theme_override_font_sizes/font_size = 39
-text = "10"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CountdownTimer" type="Timer" parent="shopui"]
-wait_time = 600.0
-
-[node name="Panel4" type="Panel" parent="shopui"]
-layout_mode = 2
-offset_left = 42.0
-offset_top = 249.0
-offset_right = 260.0
-offset_bottom = 320.0
-
-[node name="Label2" type="Label" parent="shopui/Panel4"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("1_dt3o4")
-theme_override_font_sizes/font_size = 60
-text = "BUY"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Panel" type="Panel" parent="shopui/Panel4/Label2"]
-layout_mode = 2
-offset_left = 255.0
-offset_right = 473.0
-offset_bottom = 71.0
-
-[node name="Label" type="Label" parent="shopui/Panel4/Label2/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_dt3o4")
-theme_override_font_sizes/font_size = 60
-text = "GIFT"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Panel2" type="Panel" parent="shopui/Panel4/Label2/Panel"]
-layout_mode = 2
-offset_left = -270.0
-offset_top = -152.0
-offset_right = 256.0
-offset_bottom = -14.0
-
-[node name="Label" type="Label" parent="shopui/Panel4/Label2/Panel/Panel2"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 85.0
-offset_right = 105.0
-offset_bottom = 106.0
-theme_override_fonts/font = ExtResource("1_dt3o4")
-theme_override_font_sizes/font_size = 25
-text = "On Stock"
-
-[node name="Label4" type="Label" parent="shopui/Panel4/Label2/Panel/Panel2"]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 8.0
-offset_right = 513.0
-offset_bottom = 24.0
-theme_override_fonts/font = ExtResource("1_dt3o4")
-theme_override_font_sizes/font_size = 19
-text = "Common"
-
-[node name="Label5" type="Label" parent="shopui/Panel4/Label2/Panel/Panel2"]
-layout_mode = 0
-offset_left = 151.0
-offset_top = 59.0
-offset_right = 523.0
-offset_bottom = 132.0
-theme_override_fonts/font = ExtResource("1_dt3o4")
-theme_override_font_sizes/font_size = 19
-text = "Addition is the process of combining two or 
-more numbers to find their total or sum.
-Subtraction is the process of taking one number 
-away from another to find the difference."
-
-[node name="Label2" type="Label" parent="shopui/Panel4/Label2/Panel/Panel2"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 111.0
-offset_right = 79.0
-offset_bottom = 132.0
-theme_override_fonts/font = ExtResource("1_dt3o4")
-theme_override_font_sizes/font_size = 25
-text = "$1000"
-
-[node name="Label3" type="Label" parent="shopui/Panel4/Label2/Panel/Panel2"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 9.0
-offset_right = 238.0
-offset_bottom = 30.0
-theme_override_fonts/font = ExtResource("1_dt3o4")
-theme_override_font_sizes/font_size = 25
-text = "Addition & Subtraction"
-
 [node name="back" type="Button" parent="shopui"]
 layout_mode = 2
 offset_left = 535.0
@@ -306,4 +326,5 @@ text = "back"
 
 [connection signal="pressed" from="left_container/Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="button_down" from="main/shop" to="." method="_on_shop_button_down"]
+[connection signal="pressed" from="shopui/UI/BuyCommon" to="shopui/GameManager" method="test_buy_basic_math"]
 [connection signal="button_down" from="shopui/back" to="." method="_on_back_button_down"]
