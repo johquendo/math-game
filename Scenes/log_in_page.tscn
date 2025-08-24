@@ -45,9 +45,6 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_823ph"]
-bg_color = Color(0.0196078, 0.305882, 0.596078, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mv1ju"]
 bg_color = Color(0.0392157, 0.431373, 0.827451, 1)
 corner_radius_top_left = 20
@@ -55,10 +52,21 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aq84k"]
-bg_color = Color(0.0196078, 0.305882, 0.596078, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_823ph"]
+bg_color = Color(0.054902, 0.462745, 0.878431, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
-[node name="Control2" type="Control"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aq84k"]
+bg_color = Color(0.054902, 0.462745, 0.878431, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Control3" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -181,7 +189,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("3_823ph")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_mv1ju")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_mv1ju")
 theme_override_styles/hover = SubResource("StyleBoxFlat_823ph")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mv1ju")
 theme_override_styles/normal = SubResource("StyleBoxFlat_mv1ju")
 text = "Sign up"
 
@@ -191,7 +202,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("3_823ph")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_mv1ju")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_mv1ju")
 theme_override_styles/hover = SubResource("StyleBoxFlat_aq84k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mv1ju")
 theme_override_styles/normal = SubResource("StyleBoxFlat_mv1ju")
 text = "Log in"
 

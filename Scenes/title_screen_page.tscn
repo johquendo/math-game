@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://od6v4lqk7otq"]
+[gd_scene load_steps=7 format=3 uid="uid://od6v4lqk7otq"]
 
 [ext_resource type="Script" uid="uid://c4aaloj1608ou" path="res://Godot script/Scenes Script/title_screen_page.gd" id="1_qjalg"]
 [ext_resource type="Texture2D" uid="uid://d3qf0oown1w4p" path="res://Images/full_game_logo.png" id="2_rrn07"]
+[ext_resource type="FontFile" uid="uid://cpp8fwktl7xll" path="res://Fonts/helvetica-rounded-bold-5871d05ead8de.otf" id="2_w73sr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q470r"]
 bg_color = Color(0, 0.0352941, 0.0980392, 1)
@@ -48,6 +49,7 @@ offset_bottom = 99.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.784314)
+theme_override_fonts/normal_font = ExtResource("2_w73sr")
 theme_override_font_sizes/normal_font_size = 25
 text = "an online problem-solving and collection game where players compete to prove their math mastery
 "
@@ -67,6 +69,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_w73sr")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_bm28l")
 text = "Press to start"

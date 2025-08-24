@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dojqniic322hs"]
+[gd_scene load_steps=18 format=3 uid="uid://dojqniic322hs"]
 
 [ext_resource type="Script" uid="uid://dwt8ccrpkobrw" path="res://Godot script/Scenes Script/sign_up_page.gd" id="1_kljoo"]
 [ext_resource type="Texture2D" uid="uid://cirigx8w17xfk" path="res://Images/game_logo.png" id="2_h1pxh"]
@@ -16,6 +16,19 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gurh5"]
+content_margin_left = 10.0
+bg_color = Color(0.0196078, 0.305882, 0.596078, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0197565, 0.233753, 0.46202, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kljoo"]
 content_margin_left = 10.0
 bg_color = Color(0.0196078, 0.305882, 0.596078, 1)
@@ -24,6 +37,19 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.0156863, 0.207843, 0.415686, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3fwo"]
+content_margin_left = 10.0
+bg_color = Color(0.0196078, 0.305882, 0.596078, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0197565, 0.233753, 0.46202, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -42,6 +68,19 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8bxgp"]
+content_margin_left = 10.0
+bg_color = Color(0.0196078, 0.305882, 0.596078, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0197565, 0.233753, 0.46202, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5wv0"]
 content_margin_left = 10.0
 bg_color = Color(0.0196078, 0.305882, 0.596078, 1)
@@ -50,6 +89,19 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.0156863, 0.207843, 0.415686, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cpoke"]
+content_margin_left = 10.0
+bg_color = Color(0.0196078, 0.305882, 0.596078, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0197565, 0.233753, 0.46202, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -68,13 +120,6 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2nyb"]
-bg_color = Color(0.0392157, 0.431373, 0.827451, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c64kw"]
 bg_color = Color(0.0392157, 0.431373, 0.827451, 1)
 corner_radius_top_left = 20
@@ -82,8 +127,8 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjtbd"]
-bg_color = Color(0.0392157, 0.431373, 0.827451, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2nyb"]
+bg_color = Color(0.054902, 0.462745, 0.878431, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -91,6 +136,13 @@ corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f2nbp"]
 bg_color = Color(0.0392157, 0.431373, 0.827451, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjtbd"]
+bg_color = Color(0.054902, 0.462745, 0.878431, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -121,9 +173,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -205.0
+offset_left = -235.0
 offset_top = -267.5
-offset_right = 205.0
+offset_right = 235.0
 offset_bottom = 267.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -151,10 +203,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -165.0
-offset_top = -181.0
-offset_right = 165.0
-offset_bottom = 229.0
+offset_left = -195.0
+offset_top = -178.0
+offset_right = 195.0
+offset_bottom = 232.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
@@ -166,6 +218,7 @@ theme_override_colors/font_placeholder_color = Color(1, 1, 1, 0.784314)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_n38k3")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_gurh5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_kljoo")
 placeholder_text = "Username"
 
@@ -176,6 +229,7 @@ theme_override_colors/font_placeholder_color = Color(1, 1, 1, 0.784314)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_n38k3")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_g3fwo")
 theme_override_styles/normal = SubResource("StyleBoxFlat_n38k3")
 placeholder_text = "Email"
 
@@ -186,6 +240,7 @@ theme_override_colors/font_placeholder_color = Color(1, 1, 1, 0.784314)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_n38k3")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_8bxgp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_a5wv0")
 placeholder_text = "Password"
 secret = true
@@ -197,6 +252,7 @@ theme_override_colors/font_placeholder_color = Color(1, 1, 1, 0.784314)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_n38k3")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_cpoke")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ijdwd")
 placeholder_text = "Confirm password"
 secret = true
@@ -206,7 +262,10 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_n38k3")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_c64kw")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_c64kw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_r2nyb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c64kw")
 theme_override_styles/normal = SubResource("StyleBoxFlat_c64kw")
 text = "Create Account"
 
@@ -215,7 +274,10 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_n38k3")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_f2nbp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_f2nbp")
 theme_override_styles/hover = SubResource("StyleBoxFlat_gjtbd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f2nbp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_f2nbp")
 text = "Back"
 
