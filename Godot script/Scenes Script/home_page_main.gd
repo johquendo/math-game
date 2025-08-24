@@ -9,6 +9,11 @@ extends Control
 @onready var inventory: Panel = $inventory
 @onready var leaderboards: Panel = $leaderboards
 @onready var profile: Panel = $profile
+@onready var player_1: Panel = $"player 1"
+@onready var player_2: Panel = $"player 2"
+@onready var player_3: Panel = $"player 3"
+@onready var player_4: Panel = $"player 4"
+@onready var player_5: Panel = $"player 5"
 
 # --- Timer variables ---
 const DURATION := 10 * 60 # 10 minutes in seconds
@@ -79,3 +84,15 @@ func _format_time(seconds: int) -> String:
 	var minutes = seconds / 60
 	var secs = seconds % 60
 	return "%02d:%02d" % [minutes, secs]
+
+# Player Boards
+func _on_p_1_button_down(): player_1.visible = true
+func _on_back_p_1_button_down(): player_1.visible = false
+func _on_p_2_button_down(): player_2.visible = true
+func _on_back_p_2_button_down(): player_2.visible = false
+func _on_p_3_button_down(): player_3.visible = true
+func _on_back_p_3_button_down(): player_3.visible = false
+func _on_p_4_button_down(): player_4.visible = true
+func _on_back_p_4_button_down(): player_4.visible = false
+func _on_p_5_button_down(): player_5.visible = true
+func _on_back_p_5_button_down(): player_5.visible = false

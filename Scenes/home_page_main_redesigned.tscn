@@ -1,7 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://fm10g7t6ljwv"]
+[gd_scene load_steps=31 format=3 uid="uid://fm10g7t6ljwv"]
 
 [ext_resource type="FontFile" uid="uid://cmqyf6t67qmpu" path="res://Fonts/Gildeon.otf" id="1_dt3o4"]
-[ext_resource type="Script" path="res://Godot script/Scenes Script/home_page_main_redesigned.gd" id="1_iadrb"]
 [ext_resource type="FontFile" uid="uid://cpp8fwktl7xll" path="res://Fonts/helvetica-rounded-bold-5871d05ead8de.otf" id="2_0lbyk"]
 [ext_resource type="FontFile" uid="uid://docxxo2smmwtj" path="res://Fonts/Helvetica-Bold.ttf" id="2_mykhn"]
 
@@ -160,7 +159,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_iadrb")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 0
