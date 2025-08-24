@@ -2,9 +2,9 @@ extends Control
 
 # UI references
 @onready var control: Control = $"."  
-@onready var main: VBoxContainer = $main
-@onready var shopui: Panel = $shopui
-@onready var countdown_label: Label = $shopui/CountdownLabel
+@onready var main: VBoxContainer = $Background/LeftContainer/LeftContainerBackground/MarginContainer/ButtonContainer/MainButtonsContainer
+@onready var shopui: Panel = $Background/ShopPanel
+@onready var countdown_label: Label = $Background/ShopPanel/CountdownLabel
 @onready var settings: Panel = $settings
 @onready var inventory: Panel = $inventory
 @onready var leaderboards: Panel = $leaderboards
