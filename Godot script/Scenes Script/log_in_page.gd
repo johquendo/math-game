@@ -3,7 +3,7 @@ extends Control
 @onready var username_field: LineEdit = $Background/LogInContainer/FieldContainer/Username
 @onready var password_field: LineEdit = $Background/LogInContainer/FieldContainer/Password
 @onready var login_button: Button = $Background/LogInContainer/ButtonContainer/LogInButton
-@onready var login_text: Label = $Background/Warning_text
+@onready var login_text: Label = $Background/WarningText
 @onready var sign_up_button: Button = $Background/LogInContainer/ButtonContainer/SignInButton
 
 

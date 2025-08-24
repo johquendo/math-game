@@ -195,7 +195,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_aq84k")
 theme_override_styles/normal = SubResource("StyleBoxFlat_mv1ju")
 text = "Log in"
 
-[node name="Warning_text" type="Label" parent="Background"]
+[node name="WarningText" type="Label" parent="Background"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.1

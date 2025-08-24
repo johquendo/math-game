@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dojqniic322hs"]
+[gd_scene load_steps=14 format=3 uid="uid://dojqniic322hs"]
 
 [ext_resource type="Script" uid="uid://dwt8ccrpkobrw" path="res://Godot script/Scenes Script/sign_up_page.gd" id="1_kljoo"]
 [ext_resource type="Texture2D" uid="uid://cirigx8w17xfk" path="res://Images/game_logo.png" id="2_h1pxh"]
@@ -7,40 +7,94 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skapt"]
 bg_color = Color(0, 0.0352941, 0.0980392, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lchvc"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0kdhm"]
+bg_color = Color(0.0196078, 0.243137, 0.478431, 1)
 border_color = Color(0, 0, 0, 1)
 border_blend = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndvqa"]
-bg_color = Color(0.643137, 0.643137, 0.643137, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xj0oh"]
-bg_color = Color(0.643137, 0.643137, 0.643137, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5wv0"]
-bg_color = Color(0.0196078, 0.305882, 0.596078, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kljoo"]
-bg_color = Color(0.0156863, 0.207843, 0.415686, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijdwd"]
+content_margin_left = 10.0
 bg_color = Color(0.0196078, 0.305882, 0.596078, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0156863, 0.207843, 0.415686, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n38k3"]
-bg_color = Color(0.0156863, 0.207843, 0.415686, 1)
+content_margin_left = 10.0
+bg_color = Color(0.0196078, 0.305882, 0.596078, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0156863, 0.207843, 0.415686, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5wv0"]
+content_margin_left = 10.0
+bg_color = Color(0.0196078, 0.305882, 0.596078, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0156863, 0.207843, 0.415686, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijdwd"]
+content_margin_left = 10.0
+bg_color = Color(0.0196078, 0.305882, 0.596078, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0156863, 0.207843, 0.415686, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2nyb"]
+bg_color = Color(0.0392157, 0.431373, 0.827451, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c64kw"]
+bg_color = Color(0.0392157, 0.431373, 0.827451, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjtbd"]
+bg_color = Color(0.0392157, 0.431373, 0.827451, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f2nbp"]
+bg_color = Color(0.0392157, 0.431373, 0.827451, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="Control2" type="Control"]
 layout_mode = 3
@@ -51,7 +105,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kljoo")
 
-[node name="MainBackground" type="Panel" parent="."]
+[node name="Background" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,119 +114,121 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_skapt")
 
-[node name="GameLogo" type="TextureRect" parent="MainBackground"]
-modulate = Color(1, 1, 1, 0.960784)
-z_index = 10
-layout_mode = 0
-offset_left = 251.0
-offset_top = 21.0
-offset_right = 433.0
-offset_bottom = 187.0
-texture = ExtResource("2_h1pxh")
-expand_mode = 1
-
-[node name="LogInContainer" type="Panel" parent="MainBackground"]
+[node name="LogInContainer" type="Panel" parent="Background"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -301.0
-offset_top = -263.0
-offset_right = 301.0
-offset_bottom = 272.0
+offset_left = -205.0
+offset_top = -267.5
+offset_right = 205.0
+offset_bottom = 267.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_lchvc")
+theme_override_styles/panel = SubResource("StyleBoxFlat_0kdhm")
 
-[node name="InputContainer" type="VBoxContainer" parent="MainBackground/LogInContainer"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -271.0
-offset_top = -177.5
-offset_right = 271.0
-offset_bottom = 211.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 10
-
-[node name="Username" type="LineEdit" parent="MainBackground/LogInContainer/InputContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_ndvqa")
-placeholder_text = "Username"
-
-[node name="Email" type="LineEdit" parent="MainBackground/LogInContainer/InputContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_xj0oh")
-placeholder_text = "Email"
-
-[node name="Password" type="LineEdit" parent="MainBackground/LogInContainer/InputContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_xj0oh")
-placeholder_text = "Password"
-secret = true
-
-[node name="Confirm_pass" type="LineEdit" parent="MainBackground/LogInContainer/InputContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_xj0oh")
-placeholder_text = "Confirm password"
-secret = true
-
-[node name="CreateAccountButton" type="Button" parent="MainBackground/LogInContainer/InputContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_n38k3")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/hover = SubResource("StyleBoxFlat_a5wv0")
-theme_override_styles/normal = SubResource("StyleBoxFlat_kljoo")
-text = "Create Account"
-
-[node name="Button" type="Button" parent="MainBackground/LogInContainer/InputContainer"]
-custom_minimum_size = Vector2(100, 70)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_n38k3")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/hover = SubResource("StyleBoxFlat_ijdwd")
-theme_override_styles/normal = SubResource("StyleBoxFlat_n38k3")
-text = "Back"
-
-[node name="SignUpText" type="Label" parent="MainBackground/LogInContainer"]
+[node name="SignUpText" type="Label" parent="Background/LogInContainer"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -175.0
-offset_top = 26.0
-offset_right = -45.0
-offset_bottom = 75.0
+offset_left = -59.0
+offset_top = 21.0
+offset_right = 59.0
+offset_bottom = 70.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_n38k3")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 30
 text = "Sign Up"
 
-[connection signal="pressed" from="MainBackground/LogInContainer/InputContainer/CreateAccountButton" to="." method="_on_create_account_button_pressed"]
-[connection signal="pressed" from="MainBackground/LogInContainer/InputContainer/Button" to="." method="_on_button_pressed"]
+[node name="InputContainer" type="VBoxContainer" parent="Background/LogInContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -181.0
+offset_right = 165.0
+offset_bottom = 229.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Username" type="LineEdit" parent="Background/LogInContainer/InputContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 0.784314)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_n38k3")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_kljoo")
+placeholder_text = "Username"
+
+[node name="Email" type="LineEdit" parent="Background/LogInContainer/InputContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 0.784314)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_n38k3")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_n38k3")
+placeholder_text = "Email"
+
+[node name="Password" type="LineEdit" parent="Background/LogInContainer/InputContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 0.784314)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_n38k3")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_a5wv0")
+placeholder_text = "Password"
+secret = true
+
+[node name="ConfirmPassword" type="LineEdit" parent="Background/LogInContainer/InputContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 0.784314)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_n38k3")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_ijdwd")
+placeholder_text = "Confirm password"
+secret = true
+
+[node name="CreateAccountButton" type="Button" parent="Background/LogInContainer/InputContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_n38k3")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_r2nyb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_c64kw")
+text = "Create Account"
+
+[node name="BackButton" type="Button" parent="Background/LogInContainer/InputContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_n38k3")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_gjtbd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_f2nbp")
+text = "Back"
+
+[node name="GameLogo" type="TextureRect" parent="Background/LogInContainer"]
+modulate = Color(1, 1, 1, 0.960784)
+z_index = 10
+layout_mode = 0
+offset_left = -24.0
+offset_top = -40.0
+offset_right = 158.0
+offset_bottom = 126.0
+texture = ExtResource("2_h1pxh")
+expand_mode = 1
+
+[connection signal="pressed" from="Background/LogInContainer/InputContainer/CreateAccountButton" to="." method="_on_create_account_button_pressed"]
+[connection signal="pressed" from="Background/LogInContainer/InputContainer/BackButton" to="." method="_on_button_pressed"]
