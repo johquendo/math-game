@@ -10,6 +10,17 @@ extends Control
 @onready var leaderboards: Panel = $leaderboards
 @onready var profile: Panel = $profile
 
+# --- Players Whiteboards ---
+@onready var player_1: Panel = $"player 1"
+@onready var player_2: Panel = $"player 2"
+@onready var player_3: Panel = $"player 3"
+@onready var player_4: Panel = $"player 4"
+@onready var player_5: Panel = $"player 5"
+
+var whiteboard_scene = preload("res://Scenes/WhiteboardApp.tscn")
+var whiteboard_instance: Control = null
+var whiteboard_layer: CanvasLayer = null
+
 # --- Timer variables ---
 const DURATION := 10 * 60 # 10 minutes in seconds
 var remaining_time: float = DURATION
@@ -19,6 +30,27 @@ func _ready() -> void:
 	main.visible = true
 	_hide_all_panels()
 	countdown_label.text = _format_time(int(remaining_time))
+
+	# setup whiteboard ONCE here
+	call_deferred("_setup_whiteboard")
+
+# --- Whiteboard setup ---
+func _setup_whiteboard() -> void:
+	# Create a dedicated canvas layer for the whiteboard
+	whiteboard_layer = CanvasLayer.new()
+	whiteboard_layer.layer = 10  # High layer number to be on top
+	add_child(whiteboard_layer)
+	
+	# Instance the whiteboard
+	whiteboard_instance = whiteboard_scene.instantiate()
+	whiteboard_layer.add_child(whiteboard_instance)
+	
+	# Position + size
+	whiteboard_instance.position = Vector2(221, 16)  # Adjust to fit
+	whiteboard_instance.size = Vector2(706, 608)    # Adjust to fit
+	
+	# Ensure it captures input
+	whiteboard_instance.mouse_filter = Control.MOUSE_FILTER_STOP
 
 # --- Helper to hide all popups ---
 func _hide_all_panels() -> void:
