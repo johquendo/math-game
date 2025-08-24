@@ -335,6 +335,7 @@ text = "back"
 
 [node name="profile" type="Panel" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 274.0
 offset_top = 47.0
 offset_right = 890.0
@@ -351,6 +352,7 @@ text = "back"
 
 [node name="inventory" type="Panel" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 274.0
 offset_top = 47.0
 offset_right = 890.0
@@ -367,6 +369,7 @@ text = "back"
 
 [node name="leaderboards" type="Panel" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 274.0
 offset_top = 47.0
 offset_right = 890.0
