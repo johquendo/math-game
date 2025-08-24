@@ -87,7 +87,8 @@ offset_top = 16.0
 offset_right = 927.0
 offset_bottom = 624.0
 
-[node name="whiteboardcontainer" type="Control" parent="middle container"]
+[node name="WhiteboardContainer" type="Control" parent="middle container"]
+visible = false
 layout_mode = 2
 
 [node name="Panel" type="Panel" parent="middle container"]
@@ -550,6 +551,22 @@ offset_right = 613.0
 offset_bottom = 44.0
 theme_override_fonts/font = ExtResource("2_mykhn")
 text = "back"
+
+[node name="BoardTools" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 54.0
+offset_top = 541.0
+offset_right = 138.0
+offset_bottom = 581.0
+
+[node name="PenToolButton" type="Button" parent="BoardTools"]
+layout_mode = 2
+text = "Pen
+"
+
+[node name="TextToolButton" type="Button" parent="BoardTools"]
+layout_mode = 2
+text = "Text"
 
 [connection signal="button_down" from="main/profile" to="." method="_on_profile_button_down"]
 [connection signal="button_down" from="main/shop" to="." method="_on_shop_button_down"]
