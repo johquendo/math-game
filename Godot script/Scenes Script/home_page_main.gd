@@ -18,6 +18,10 @@ extends Control
 @onready var player_4: Panel = $"player 4"
 @onready var player_5: Panel = $"player 5"
 
+var whiteboard_scene = preload("res://Scenes/WhiteboardApp.tscn")
+var whiteboard_instance = null
+var whiteboard_layer = null
+
 
 # Timer variables
 const DURATION := 10 * 60 # 10 minutes in seconds
@@ -28,6 +32,34 @@ func _ready() -> void:
 	main.visible = true
 	shopui.visible = false
 	countdown_label.text = _format_time(int(remaining_time))
+	
+	
+# --- WHITEBOARD STUFF ---
+	
+
+	call_deferred("_setup_whiteboard")
+	
+func _setup_whiteboard():
+	# Create a dedicated canvas layer for the whiteboard
+	whiteboard_layer = CanvasLayer.new()
+	whiteboard_layer.layer = 10  # High layer number to be on top
+	add_child(whiteboard_layer)
+	
+	# Instance the whiteboard
+	whiteboard_instance = whiteboard_scene.instantiate()
+	whiteboard_layer.add_child(whiteboard_instance)
+	
+	# POSITIONING: Set the whiteboard position and size
+	whiteboard_instance.position = Vector2(221, 16)  # Adjust these values
+	whiteboard_instance.size = Vector2(706, 608)    # Adjust these values
+	
+	# Ensure input works
+	whiteboard_instance.mouse_filter = Control.MOUSE_FILTER_STOP
+	
+# ------------------------------------
+	
+
+	
 	
 func _on_button_pressed() -> void:
 	_ready()

@@ -11,6 +11,7 @@ var lines = []  # Store drawn lines
 var text_instances = []  # Store text instances
 var active_text_instance = null
 var text_scene = preload("res://Scenes/TextTool.tscn")
+var just_finished_editing = false
 
 @onready var drawing_layer = $DrawingLayer
 @onready var background = $Background
@@ -40,16 +41,23 @@ func _on_pen_tool_selected():
 	if active_text_instance:
 		active_text_instance.finish_editing()
 	active_text_instance = null
-	emit_signal("tool_changed", current_tool)  # Add this line
+	emit_signal("tool_changed", current_tool)
+	queue_redraw()
 
 func _on_text_tool_selected():
 	current_tool = Tool.TEXT
 	if active_text_instance:
 		active_text_instance.finish_editing()
 	active_text_instance = null
-	emit_signal("tool_changed", current_tool)  # Add this line
+	emit_signal("tool_changed", current_tool)
+	queue_redraw()
 	
 func _input(event):
+	# Reset the just_finished_editing flag after processing
+	if just_finished_editing:
+		just_finished_editing = false
+		return
+	
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			# Check if we're clicking on UI tools (buttons)
@@ -100,12 +108,18 @@ func _input(event):
 				if active_text_instance and not active_text_instance.get_global_rect().has_point(event.position):
 					active_text_instance.finish_editing()
 					active_text_instance = null
-					return  # Return here to prevent immediate creation of new text box
+					just_finished_editing = true
+					return
 				
-				# Only add text if no text box is currently active
+				# Only add text if no text box is currently active AND click is within canvas bounds
 				if active_text_instance == null:
-					# Add text at mouse position
-					add_text(event.position)
+					# Convert global mouse position to local whiteboard position
+					var local_mouse_pos = get_global_mouse_position() - global_position
+					
+					# ONLY create text if clicking within the canvas area
+					if _is_within_canvas_bounds(local_mouse_pos):
+						# Add text at corrected mouse position (adjusted to keep text box within bounds)
+						add_text(_adjust_text_position(local_mouse_pos))
 		
 		# Handle right-click for all tools
 		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
@@ -135,6 +149,10 @@ func handle_right_click_text_tool(click_position):
 	get_viewport().set_input_as_handled()
 
 func _gui_input(event):
+	# Only process events within whiteboard bounds
+	if not _is_within_drawing_bounds(event.position):
+		return  # Ignore events outside whiteboard
+	
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if current_tool == Tool.PEN:
@@ -147,15 +165,76 @@ func _gui_input(event):
 	
 	if event is InputEventMouseMotion and drawing:
 		if current_tool == Tool.PEN:
-			lines[-1].append(event.position)
-			queue_redraw()
+			# Only draw if within bounds
+			if _is_within_drawing_bounds(event.position):
+				lines[-1].append(event.position)
+				queue_redraw()
+
+func _is_within_drawing_bounds(position):
+	# Get the drawing area bounds (excluding UI tools area)
+	var drawing_bounds = Rect2(Vector2.ZERO, size)
+	
+	# If you have UI tools at the top, exclude that area
+	var ui_tools_height = 0
+	if has_node("UITools"):
+		ui_tools_height = $UITools.size.y
+		drawing_bounds = Rect2(Vector2(0, ui_tools_height), Vector2(size.x, size.y - ui_tools_height))
+	
+	return drawing_bounds.has_point(position)
+
+func _is_within_canvas_bounds(position):
+	# Check if position is within the entire canvas area (including UI tools)
+	var canvas_bounds = Rect2(Vector2.ZERO, size)
+	return canvas_bounds.has_point(position)
+
+func _adjust_text_position(mouse_position):
+	# Get the default text box size (from the scene or use a default)
+	var text_box_size = Vector2(150, 30)  # Default size, adjust if your text boxes are different
+	
+	# Get canvas bounds (excluding UI tools area)
+	var canvas_bounds = Rect2(Vector2.ZERO, size)
+	var ui_tools_height = 0
+	if has_node("UITools"):
+		ui_tools_height = $UITools.size.y
+		canvas_bounds = Rect2(Vector2(0, ui_tools_height), Vector2(size.x, size.y - ui_tools_height))
+	
+	# Adjust position to keep the entire text box within bounds
+	var adjusted_position = mouse_position
+	
+	# Check right boundary
+	if mouse_position.x + text_box_size.x > canvas_bounds.end.x:
+		adjusted_position.x = canvas_bounds.end.x - text_box_size.x
+	
+	# Check left boundary
+	if mouse_position.x < canvas_bounds.position.x:
+		adjusted_position.x = canvas_bounds.position.x
+	
+	# Check bottom boundary
+	if mouse_position.y + text_box_size.y > canvas_bounds.end.y:
+		adjusted_position.y = canvas_bounds.end.y - text_box_size.y
+	
+	# Check top boundary (below UI tools)
+	if mouse_position.y < canvas_bounds.position.y:
+		adjusted_position.y = canvas_bounds.position.y
+	
+	return adjusted_position
 
 func _draw():
-	# Draw all lines
+	# Draw all lines (only within bounds)
 	for line in lines:
 		if line.size() > 1:
 			for i in range(line.size() - 1):
-				draw_line(line[i], line[i+1], Color.BLACK, 2.0)
+				# Only draw if both points are within bounds
+				if _is_within_drawing_bounds(line[i]) and _is_within_drawing_bounds(line[i+1]):
+					draw_line(line[i], line[i+1], Color.BLACK, 2.0)
+	
+	# Draw borders for text boxes in text mode
+	if current_tool == Tool.TEXT:
+		for text_instance in text_instances:
+			if not text_instance.is_editing:
+				# Draw gray border around each text box in text mode
+				var rect = Rect2(text_instance.position, text_instance.size)
+				draw_rect(rect, Color.GRAY, false, 1.0)
 
 func add_text(position):
 	var new_text = text_scene.instantiate()
@@ -166,10 +245,34 @@ func add_text(position):
 	if ui_rect.has_point(position):
 		position.y = ui_rect.end.y + 20
 	
+	# Get the actual text box size after instantiation
+	var text_box_size = new_text.size
+	
+	# Final adjustment to ensure text box stays within bounds
+	var canvas_bounds = Rect2(Vector2.ZERO, size)
+	var ui_tools_height = 0
+	if has_node("UITools"):
+		ui_tools_height = $UITools.size.y
+		canvas_bounds = Rect2(Vector2(0, ui_tools_height), Vector2(size.x, size.y - ui_tools_height))
+	
+	# Check right boundary
+	if position.x + text_box_size.x > canvas_bounds.end.x:
+		position.x = canvas_bounds.end.x - text_box_size.x
+	
+	# Check bottom boundary
+	if position.y + text_box_size.y > canvas_bounds.end.y:
+		position.y = canvas_bounds.end.y - text_box_size.y
+	
 	new_text.position = position
-	new_text.text_size_changed.connect(_on_text_size_changed)
-	new_text.edit_requested.connect(_on_text_edit_requested)
-	new_text.edit_finished.connect(_on_text_edit_finished)
+	
+	# SAFELY connect signals
+	if has_method("_on_text_size_changed"):
+		new_text.text_size_changed.connect(_on_text_size_changed)
+	if has_method("_on_text_edit_requested"):
+		new_text.edit_requested.connect(_on_text_edit_requested)
+	if has_method("_on_text_edit_finished"):
+		new_text.edit_finished.connect(_on_text_edit_finished)
+	
 	text_instances.append(new_text)
 	
 	# Deselect any previously active text
@@ -190,11 +293,21 @@ func _on_text_edit_requested(text_instance):
 		active_text_instance.finish_editing()
 	
 	active_text_instance = text_instance
+	queue_redraw()
 
 func _on_text_edit_finished(text_instance):
 	if active_text_instance == text_instance:
 		active_text_instance = null
-
+	queue_redraw()
 
 func get_current_tool():
 	return current_tool
+
+func has_active_text_instance():
+	return active_text_instance != null
+
+func safely_finish_editing():
+	if active_text_instance:
+		active_text_instance.finish_editing()
+		active_text_instance = null
+		queue_redraw()

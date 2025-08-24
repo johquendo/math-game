@@ -87,6 +87,9 @@ offset_top = 16.0
 offset_right = 927.0
 offset_bottom = 624.0
 
+[node name="whiteboardcontainer" type="Control" parent="middle container"]
+layout_mode = 2
+
 [node name="Panel" type="Panel" parent="middle container"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_l4r40")
