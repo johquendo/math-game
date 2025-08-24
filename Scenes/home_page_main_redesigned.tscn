@@ -308,6 +308,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 51.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -316,52 +317,18 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Panel" type="Panel" parent="Background/ShopPanel/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 500)
+[node name="ShopOption" type="Panel" parent="Background/ShopPanel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 280)
 layout_mode = 2
 
-[node name="Panel3" type="Panel" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel"]
-layout_mode = 2
-offset_left = 22.0
-offset_top = 14.0
-offset_right = 304.0
-offset_bottom = 57.0
-
-[node name="TextEdit" type="TextEdit" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel/Panel3"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_dt3o4")
-theme_override_font_sizes/font_size = 35
-text = "New Hoes On Stock"
-
-[node name="CountdownLabel" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel"]
-layout_mode = 2
-offset_left = 339.0
-offset_top = 24.0
-offset_right = 396.0
-offset_bottom = 56.0
-size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("1_dt3o4")
-theme_override_font_sizes/font_size = 39
-text = "10"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CountdownTimer" type="Timer" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel"]
-wait_time = 600.0
-
-[node name="Panel4" type="Panel" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel"]
+[node name="Panel4" type="Panel" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption"]
 layout_mode = 2
 offset_left = 42.0
-offset_top = 249.0
+offset_top = 179.0
 offset_right = 260.0
-offset_bottom = 320.0
+offset_bottom = 250.0
 
-[node name="Label2" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel/Panel4"]
+[node name="Label2" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption/Panel4"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -375,13 +342,13 @@ text = "BUY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel/Panel4/Label2"]
+[node name="Panel" type="Panel" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption/Panel4/Label2"]
 layout_mode = 2
 offset_left = 255.0
 offset_right = 473.0
 offset_bottom = 71.0
 
-[node name="Label" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel/Panel4/Label2/Panel"]
+[node name="Label" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption/Panel4/Label2/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -394,14 +361,14 @@ text = "GIFT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel2" type="Panel" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel/Panel4/Label2/Panel"]
+[node name="Panel2" type="Panel" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption/Panel4/Label2/Panel"]
 layout_mode = 2
 offset_left = -270.0
 offset_top = -152.0
 offset_right = 256.0
 offset_bottom = -14.0
 
-[node name="Label" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel/Panel4/Label2/Panel/Panel2"]
+[node name="Label" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption/Panel4/Label2/Panel/Panel2"]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 85.0
@@ -411,7 +378,7 @@ theme_override_fonts/font = ExtResource("1_dt3o4")
 theme_override_font_sizes/font_size = 25
 text = "On Stock"
 
-[node name="Label4" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel/Panel4/Label2/Panel/Panel2"]
+[node name="Label4" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption/Panel4/Label2/Panel/Panel2"]
 layout_mode = 0
 offset_left = 448.0
 offset_top = 8.0
@@ -421,7 +388,7 @@ theme_override_fonts/font = ExtResource("1_dt3o4")
 theme_override_font_sizes/font_size = 19
 text = "Common"
 
-[node name="Label5" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel/Panel4/Label2/Panel/Panel2"]
+[node name="Label5" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption/Panel4/Label2/Panel/Panel2"]
 layout_mode = 0
 offset_left = 151.0
 offset_top = 59.0
@@ -434,7 +401,7 @@ more numbers to find their total or sum.
 Subtraction is the process of taking one number 
 away from another to find the difference."
 
-[node name="Label2" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel/Panel4/Label2/Panel/Panel2"]
+[node name="Label2" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption/Panel4/Label2/Panel/Panel2"]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 111.0
@@ -444,7 +411,7 @@ theme_override_fonts/font = ExtResource("1_dt3o4")
 theme_override_font_sizes/font_size = 25
 text = "$1000"
 
-[node name="Label3" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel/Panel4/Label2/Panel/Panel2"]
+[node name="Label3" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption/Panel4/Label2/Panel/Panel2"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 9.0
@@ -454,52 +421,18 @@ theme_override_fonts/font = ExtResource("1_dt3o4")
 theme_override_font_sizes/font_size = 25
 text = "Addition & Subtraction"
 
-[node name="Panel2" type="Panel" parent="Background/ShopPanel/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 500)
+[node name="ShopOption2" type="Panel" parent="Background/ShopPanel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 280)
 layout_mode = 2
 
-[node name="Panel3" type="Panel" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel2"]
-layout_mode = 2
-offset_left = 22.0
-offset_top = 14.0
-offset_right = 304.0
-offset_bottom = 57.0
-
-[node name="TextEdit" type="TextEdit" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel2/Panel3"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_dt3o4")
-theme_override_font_sizes/font_size = 35
-text = "New Hoes On Stock"
-
-[node name="CountdownLabel" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel2"]
-layout_mode = 2
-offset_left = 339.0
-offset_top = 24.0
-offset_right = 396.0
-offset_bottom = 56.0
-size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("1_dt3o4")
-theme_override_font_sizes/font_size = 39
-text = "10"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CountdownTimer" type="Timer" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel2"]
-wait_time = 600.0
-
-[node name="Panel4" type="Panel" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel2"]
+[node name="Panel4" type="Panel" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption2"]
 layout_mode = 2
 offset_left = 42.0
-offset_top = 249.0
+offset_top = 179.0
 offset_right = 260.0
-offset_bottom = 320.0
+offset_bottom = 250.0
 
-[node name="Label2" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel2/Panel4"]
+[node name="Label2" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption2/Panel4"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -513,13 +446,13 @@ text = "BUY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel2/Panel4/Label2"]
+[node name="Panel" type="Panel" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption2/Panel4/Label2"]
 layout_mode = 2
 offset_left = 255.0
 offset_right = 473.0
 offset_bottom = 71.0
 
-[node name="Label" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel2/Panel4/Label2/Panel"]
+[node name="Label" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption2/Panel4/Label2/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -532,14 +465,14 @@ text = "GIFT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel2" type="Panel" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel2/Panel4/Label2/Panel"]
+[node name="Panel2" type="Panel" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption2/Panel4/Label2/Panel"]
 layout_mode = 2
 offset_left = -270.0
 offset_top = -152.0
 offset_right = 256.0
 offset_bottom = -14.0
 
-[node name="Label" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel2/Panel4/Label2/Panel/Panel2"]
+[node name="Label" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption2/Panel4/Label2/Panel/Panel2"]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 85.0
@@ -549,7 +482,7 @@ theme_override_fonts/font = ExtResource("1_dt3o4")
 theme_override_font_sizes/font_size = 25
 text = "On Stock"
 
-[node name="Label4" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel2/Panel4/Label2/Panel/Panel2"]
+[node name="Label4" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption2/Panel4/Label2/Panel/Panel2"]
 layout_mode = 0
 offset_left = 448.0
 offset_top = 8.0
@@ -559,7 +492,7 @@ theme_override_fonts/font = ExtResource("1_dt3o4")
 theme_override_font_sizes/font_size = 19
 text = "Common"
 
-[node name="Label5" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel2/Panel4/Label2/Panel/Panel2"]
+[node name="Label5" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption2/Panel4/Label2/Panel/Panel2"]
 layout_mode = 0
 offset_left = 151.0
 offset_top = 59.0
@@ -572,7 +505,7 @@ more numbers to find their total or sum.
 Subtraction is the process of taking one number 
 away from another to find the difference."
 
-[node name="Label2" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel2/Panel4/Label2/Panel/Panel2"]
+[node name="Label2" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption2/Panel4/Label2/Panel/Panel2"]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 111.0
@@ -582,7 +515,111 @@ theme_override_fonts/font = ExtResource("1_dt3o4")
 theme_override_font_sizes/font_size = 25
 text = "$1000"
 
-[node name="Label3" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/Panel2/Panel4/Label2/Panel/Panel2"]
+[node name="Label3" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption2/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 9.0
+offset_right = 238.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 25
+text = "Addition & Subtraction"
+
+[node name="ShopOption3" type="Panel" parent="Background/ShopPanel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 280)
+layout_mode = 2
+
+[node name="Panel4" type="Panel" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption3"]
+layout_mode = 2
+offset_left = 42.0
+offset_top = 179.0
+offset_right = 260.0
+offset_bottom = 250.0
+
+[node name="Label2" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption3/Panel4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 60
+text = "BUY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption3/Panel4/Label2"]
+layout_mode = 2
+offset_left = 255.0
+offset_right = 473.0
+offset_bottom = 71.0
+
+[node name="Label" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption3/Panel4/Label2/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 60
+text = "GIFT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption3/Panel4/Label2/Panel"]
+layout_mode = 2
+offset_left = -270.0
+offset_top = -152.0
+offset_right = 256.0
+offset_bottom = -14.0
+
+[node name="Label" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption3/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 85.0
+offset_right = 105.0
+offset_bottom = 106.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 25
+text = "On Stock"
+
+[node name="Label4" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption3/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 8.0
+offset_right = 513.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 19
+text = "Common"
+
+[node name="Label5" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption3/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 59.0
+offset_right = 523.0
+offset_bottom = 132.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 19
+text = "Addition is the process of combining two or 
+more numbers to find their total or sum.
+Subtraction is the process of taking one number 
+away from another to find the difference."
+
+[node name="Label2" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption3/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 111.0
+offset_right = 79.0
+offset_bottom = 132.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 25
+text = "$1000"
+
+[node name="Label3" type="Label" parent="Background/ShopPanel/ScrollContainer/VBoxContainer/ShopOption3/Panel4/Label2/Panel/Panel2"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 9.0
@@ -600,6 +637,32 @@ offset_right = 613.0
 offset_bottom = 44.0
 theme_override_fonts/font = ExtResource("2_mykhn")
 text = "back"
+
+[node name="TextEdit" type="TextEdit" parent="Background/ShopPanel"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 4.0
+offset_right = 377.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 35
+text = "New Hoes On Stock"
+
+[node name="CountdownLabel" type="Label" parent="Background/ShopPanel"]
+layout_mode = 2
+offset_left = 391.0
+offset_top = 10.0
+offset_right = 448.0
+offset_bottom = 42.0
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 39
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CountdownTimer" type="Timer" parent="Background/ShopPanel"]
+wait_time = 600.0
 
 [node name="settings" type="Panel" parent="."]
 visible = false

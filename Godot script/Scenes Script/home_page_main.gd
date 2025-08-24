@@ -101,3 +101,7 @@ func _on_back_leaderboards_button_down() -> void:
 	
 func _on_back_leaderboards_pressed() -> void:
 	_ready_leaderboards()
+
+
+func _on_back_pressed() -> void:
+	pass # Replace with function body.
