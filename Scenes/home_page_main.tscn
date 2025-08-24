@@ -144,10 +144,10 @@ text = "S E T T I N G S"
 [node name="shopui" type="Panel" parent="."]
 visible = false
 layout_mode = 2
-offset_left = 273.0
-offset_top = 48.0
-offset_right = 889.0
-offset_bottom = 586.0
+offset_left = 274.0
+offset_top = 47.0
+offset_right = 890.0
+offset_bottom = 585.0
 
 [node name="Panel3" type="Panel" parent="shopui"]
 layout_mode = 2
@@ -294,12 +294,13 @@ text = "back"
 
 [node name="settings" type="Panel" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 274.0
 offset_top = 47.0
 offset_right = 890.0
 offset_bottom = 585.0
 
-[node name="backk" type="Button" parent="settings"]
+[node name="back_setting" type="Button" parent="settings"]
 layout_mode = 2
 offset_left = 535.0
 offset_top = 2.0
@@ -308,8 +309,62 @@ offset_bottom = 44.0
 theme_override_fonts/font = ExtResource("2_mykhn")
 text = "back"
 
+[node name="profile" type="Panel" parent="."]
+visible = false
+offset_left = 274.0
+offset_top = 47.0
+offset_right = 890.0
+offset_bottom = 585.0
+
+[node name="back_profile" type="Button" parent="profile"]
+layout_mode = 2
+offset_left = 535.0
+offset_top = 2.0
+offset_right = 613.0
+offset_bottom = 44.0
+theme_override_fonts/font = ExtResource("2_mykhn")
+text = "back"
+
+[node name="inventory" type="Panel" parent="."]
+visible = false
+offset_left = 274.0
+offset_top = 47.0
+offset_right = 890.0
+offset_bottom = 585.0
+
+[node name="back_inventory" type="Button" parent="inventory"]
+layout_mode = 2
+offset_left = 535.0
+offset_top = 2.0
+offset_right = 613.0
+offset_bottom = 44.0
+theme_override_fonts/font = ExtResource("2_mykhn")
+text = "back"
+
+[node name="leaderboards" type="Panel" parent="."]
+visible = false
+offset_left = 274.0
+offset_top = 47.0
+offset_right = 890.0
+offset_bottom = 585.0
+
+[node name="back_leaderboards" type="Button" parent="leaderboards"]
+layout_mode = 2
+offset_left = 535.0
+offset_top = 2.0
+offset_right = 613.0
+offset_bottom = 44.0
+theme_override_fonts/font = ExtResource("2_mykhn")
+text = "back"
+
+[connection signal="button_down" from="main/profile" to="." method="_on_profile_button_down"]
 [connection signal="button_down" from="main/shop" to="." method="_on_shop_button_down"]
+[connection signal="button_down" from="main/inventory" to="." method="_on_inventory_button_down"]
+[connection signal="button_down" from="main/leaderboards" to="." method="_on_leaderboards_button_down"]
 [connection signal="button_down" from="main/settings" to="." method="_on_settings_button_down"]
 [connection signal="button_down" from="shopui/back" to="." method="_on_back_button_down"]
 [connection signal="pressed" from="shopui/back" to="." method="_on_back_pressed"]
-[connection signal="button_down" from="settings/backk" to="." method="_on_backk_button_down"]
+[connection signal="button_down" from="settings/back_setting" to="." method="_on_backk_button_down"]
+[connection signal="button_down" from="profile/back_profile" to="." method="_on_back_profile_button_down"]
+[connection signal="button_down" from="inventory/back_inventory" to="." method="_on_back_inventory_button_down"]
+[connection signal="button_down" from="leaderboards/back_leaderboards" to="." method="_on_back_leaderboards_button_down"]
