@@ -10,6 +10,7 @@ extends Control
 @onready var leaderboards: Panel = $leaderboards
 @onready var profile: Panel = $profile
 
+<<<<<<< Updated upstream
 # --- Players Whiteboards ---
 @onready var player_1: Panel = $"player 1"
 @onready var player_2: Panel = $"player 2"
@@ -21,6 +22,8 @@ var whiteboard_scene = preload("res://Scenes/WhiteboardApp.tscn")
 var whiteboard_instance: Control = null
 var whiteboard_layer: CanvasLayer = null
 
+=======
+>>>>>>> Stashed changes
 # --- Timer variables ---
 const DURATION := 10 * 60 # 10 minutes in seconds
 var remaining_time: float = DURATION
@@ -31,6 +34,7 @@ func _ready() -> void:
 	_hide_all_panels()
 	countdown_label.text = _format_time(int(remaining_time))
 
+<<<<<<< Updated upstream
 	# setup whiteboard ONCE here
 	call_deferred("_setup_whiteboard")
 
@@ -52,6 +56,8 @@ func _setup_whiteboard() -> void:
 	# Ensure it captures input
 	whiteboard_instance.mouse_filter = Control.MOUSE_FILTER_STOP
 
+=======
+>>>>>>> Stashed changes
 # --- Helper to hide all popups ---
 func _hide_all_panels() -> void:
 	shopui.visible = false
