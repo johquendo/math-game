@@ -3,12 +3,20 @@ extends Control
 # UI references
 @onready var control: Control = $"."  
 @onready var main: VBoxContainer = $main
-@onready var shopui: Panel = $shopui
+@onready var playerboard: VBoxContainer = $playerboard/playerboard
 @onready var countdown_label: Label = $shopui/CountdownLabel
+# --- Main Home Page ---
+@onready var shopui: Panel = $shopui
 @onready var settings: Panel = $settings
 @onready var inventory: Panel = $inventory
 @onready var leaderboards: Panel = $leaderboards
 @onready var profile: Panel = $profile
+# --- Players Whiteboards ---
+@onready var player_1: Panel = $"player 1"
+@onready var player_2: Panel = $"player 2"
+@onready var player_3: Panel = $"player 3"
+@onready var player_4: Panel = $"player 4"
+@onready var player_5: Panel = $"player 5"
 
 
 # Timer variables
@@ -101,3 +109,75 @@ func _on_back_leaderboards_button_down() -> void:
 	
 func _on_back_leaderboards_pressed() -> void:
 	_ready_leaderboards()
+
+# --- Pop-up Player Whiteboards ---
+# --- Player 1 ---
+func _ready_p1():
+	player_1.visible = true
+	playerboard.visible = false
+	
+func _on_p_1_button_down() -> void:
+	player_1.visible = true
+
+func _on_back_p_1_button_down() -> void:
+	player_1.visible = false
+	
+func _on_back_p1_pressed() -> void:
+	_ready_p1()
+	
+# --- Player 2 ---
+
+func _ready_p2():
+	player_2.visible = true
+	playerboard.visible = false
+
+func _on_p_2_button_down() -> void:
+	player_2.visible = true
+
+func _on_back_p_2_button_down() -> void:
+	player_2.visible = false
+
+func _on_back_p2_pressed() -> void:
+	_ready_p2()
+
+# --- Player 3 ---
+func _ready_p3():
+	player_3.visible = true
+	playerboard.visible = false
+
+func _on_p_3_button_down() -> void:
+	player_3.visible = true
+
+func _on_back_p_3_button_down() -> void:
+	player_3.visible = false
+
+func _on_back_p3_pressed () -> void:
+	_ready_p3()
+	
+# --- Player 4 ---
+func _ready_p4():
+	player_4.visible = true
+	playerboard.visible = false
+
+func _on_p_4_button_down() -> void:
+	player_4.visible = true
+
+func _on_back_p_4_button_down() -> void:
+	player_4.visible = false
+
+func _on_back_p4_pressed () -> void:
+	_ready_p4()
+	
+# --- Player 5 ---
+func _ready_p5():
+	player_5.visible = true
+	playerboard.visible = false
+
+func _on_p_5_button_down() -> void:
+	player_5.visible = true
+
+func _on_back_p_5_button_down() -> void:
+	player_5.visible = false
+	
+func _on_back_p5_pressed () -> void:
+	_ready_p5()
