@@ -294,6 +294,7 @@ text = "back"
 
 [node name="settings" type="Panel" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 274.0
 offset_top = 47.0
 offset_right = 890.0
