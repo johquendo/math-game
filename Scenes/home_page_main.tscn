@@ -169,12 +169,359 @@ action_mode = 0
 text = "S E T T I N G S"
 
 [node name="shopui" type="Panel" parent="."]
-visible = false
 layout_mode = 2
 offset_left = 274.0
 offset_top = 47.0
 offset_right = 890.0
 offset_bottom = 585.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="shopui"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="shopui/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="ItemContainer" type="Panel" parent="shopui/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 280)
+layout_mode = 2
+
+[node name="Panel4" type="Panel" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -249.0
+offset_top = 39.0
+offset_right = -31.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer/Panel4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 60
+text = "BUY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer/Panel4/Label2"]
+layout_mode = 2
+offset_left = 255.0
+offset_right = 473.0
+offset_bottom = 71.0
+
+[node name="Label" type="Label" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer/Panel4/Label2/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 60
+text = "GIFT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer/Panel4/Label2/Panel"]
+layout_mode = 2
+offset_left = -270.0
+offset_top = -152.0
+offset_right = 256.0
+offset_bottom = -14.0
+
+[node name="Label" type="Label" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 85.0
+offset_right = 105.0
+offset_bottom = 106.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 25
+text = "On Stock"
+
+[node name="Label4" type="Label" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 8.0
+offset_right = 513.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 19
+text = "Common"
+
+[node name="Label5" type="Label" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 59.0
+offset_right = 523.0
+offset_bottom = 132.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 19
+text = "Addition is the process of combining two or 
+more numbers to find their total or sum.
+Subtraction is the process of taking one number 
+away from another to find the difference."
+
+[node name="Label2" type="Label" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 111.0
+offset_right = 79.0
+offset_bottom = 132.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 25
+text = "$1000"
+
+[node name="Label3" type="Label" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 9.0
+offset_right = 238.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 25
+text = "Addition & Subtraction"
+
+[node name="ItemContainer2" type="Panel" parent="shopui/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 280)
+layout_mode = 2
+
+[node name="Panel4" type="Panel" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -249.0
+offset_top = 39.0
+offset_right = -31.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer2/Panel4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 60
+text = "BUY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer2/Panel4/Label2"]
+layout_mode = 2
+offset_left = 255.0
+offset_right = 473.0
+offset_bottom = 71.0
+
+[node name="Label" type="Label" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer2/Panel4/Label2/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 60
+text = "GIFT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer2/Panel4/Label2/Panel"]
+layout_mode = 2
+offset_left = -270.0
+offset_top = -152.0
+offset_right = 256.0
+offset_bottom = -14.0
+
+[node name="Label" type="Label" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer2/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 85.0
+offset_right = 105.0
+offset_bottom = 106.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 25
+text = "On Stock"
+
+[node name="Label4" type="Label" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer2/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 8.0
+offset_right = 513.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 19
+text = "Common"
+
+[node name="Label5" type="Label" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer2/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 59.0
+offset_right = 523.0
+offset_bottom = 132.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 19
+text = "Addition is the process of combining two or 
+more numbers to find their total or sum.
+Subtraction is the process of taking one number 
+away from another to find the difference."
+
+[node name="Label2" type="Label" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer2/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 111.0
+offset_right = 79.0
+offset_bottom = 132.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 25
+text = "$1000"
+
+[node name="Label3" type="Label" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer2/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 9.0
+offset_right = 238.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 25
+text = "Addition & Subtraction"
+
+[node name="ItemContainer3" type="Panel" parent="shopui/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 280)
+layout_mode = 2
+
+[node name="Panel4" type="Panel" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -249.0
+offset_top = 39.0
+offset_right = -31.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer3/Panel4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 60
+text = "BUY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer3/Panel4/Label2"]
+layout_mode = 2
+offset_left = 255.0
+offset_right = 473.0
+offset_bottom = 71.0
+
+[node name="Label" type="Label" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer3/Panel4/Label2/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 60
+text = "GIFT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer3/Panel4/Label2/Panel"]
+layout_mode = 2
+offset_left = -270.0
+offset_top = -152.0
+offset_right = 256.0
+offset_bottom = -14.0
+
+[node name="Label" type="Label" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer3/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 85.0
+offset_right = 105.0
+offset_bottom = 106.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 25
+text = "On Stock"
+
+[node name="Label4" type="Label" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer3/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 8.0
+offset_right = 513.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 19
+text = "Common"
+
+[node name="Label5" type="Label" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer3/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 59.0
+offset_right = 523.0
+offset_bottom = 132.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 19
+text = "Addition is the process of combining two or 
+more numbers to find their total or sum.
+Subtraction is the process of taking one number 
+away from another to find the difference."
+
+[node name="Label2" type="Label" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer3/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 111.0
+offset_right = 79.0
+offset_bottom = 132.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 25
+text = "$1000"
+
+[node name="Label3" type="Label" parent="shopui/ScrollContainer/VBoxContainer/ItemContainer3/Panel4/Label2/Panel/Panel2"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 9.0
+offset_right = 238.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("1_dt3o4")
+theme_override_font_sizes/font_size = 25
+text = "Addition & Subtraction"
 
 [node name="Panel3" type="Panel" parent="shopui"]
 layout_mode = 2
@@ -209,106 +556,6 @@ vertical_alignment = 1
 
 [node name="CountdownTimer" type="Timer" parent="shopui"]
 wait_time = 600.0
-
-[node name="Panel4" type="Panel" parent="shopui"]
-layout_mode = 2
-offset_left = 42.0
-offset_top = 249.0
-offset_right = 260.0
-offset_bottom = 320.0
-
-[node name="Label2" type="Label" parent="shopui/Panel4"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("1_dt3o4")
-theme_override_font_sizes/font_size = 60
-text = "BUY"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Panel" type="Panel" parent="shopui/Panel4/Label2"]
-layout_mode = 2
-offset_left = 255.0
-offset_right = 473.0
-offset_bottom = 71.0
-
-[node name="Label" type="Label" parent="shopui/Panel4/Label2/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_dt3o4")
-theme_override_font_sizes/font_size = 60
-text = "GIFT"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Panel2" type="Panel" parent="shopui/Panel4/Label2/Panel"]
-layout_mode = 2
-offset_left = -270.0
-offset_top = -152.0
-offset_right = 256.0
-offset_bottom = -14.0
-
-[node name="Label" type="Label" parent="shopui/Panel4/Label2/Panel/Panel2"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 85.0
-offset_right = 105.0
-offset_bottom = 106.0
-theme_override_fonts/font = ExtResource("1_dt3o4")
-theme_override_font_sizes/font_size = 25
-text = "On Stock"
-
-[node name="Label4" type="Label" parent="shopui/Panel4/Label2/Panel/Panel2"]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 8.0
-offset_right = 513.0
-offset_bottom = 24.0
-theme_override_fonts/font = ExtResource("1_dt3o4")
-theme_override_font_sizes/font_size = 19
-text = "Common"
-
-[node name="Label5" type="Label" parent="shopui/Panel4/Label2/Panel/Panel2"]
-layout_mode = 0
-offset_left = 151.0
-offset_top = 59.0
-offset_right = 523.0
-offset_bottom = 132.0
-theme_override_fonts/font = ExtResource("1_dt3o4")
-theme_override_font_sizes/font_size = 19
-text = "Addition is the process of combining two or 
-more numbers to find their total or sum.
-Subtraction is the process of taking one number 
-away from another to find the difference."
-
-[node name="Label2" type="Label" parent="shopui/Panel4/Label2/Panel/Panel2"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 111.0
-offset_right = 79.0
-offset_bottom = 132.0
-theme_override_fonts/font = ExtResource("1_dt3o4")
-theme_override_font_sizes/font_size = 25
-text = "$1000"
-
-[node name="Label3" type="Label" parent="shopui/Panel4/Label2/Panel/Panel2"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 9.0
-offset_right = 238.0
-offset_bottom = 30.0
-theme_override_fonts/font = ExtResource("1_dt3o4")
-theme_override_font_sizes/font_size = 25
-text = "Addition & Subtraction"
 
 [node name="back" type="Button" parent="shopui"]
 layout_mode = 2

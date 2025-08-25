@@ -1,12 +1,12 @@
 extends Control
 
-@onready var username_field: LineEdit = $MainBackground/LogInContainer/InputContainer/Username
-@onready var email_field: LineEdit = $MainBackground/LogInContainer/InputContainer/Email
-@onready var password_field: LineEdit = $MainBackground/LogInContainer/InputContainer/Password
-@onready var confirm_field: LineEdit = $MainBackground/LogInContainer/InputContainer/Confirm_pass
-@onready var create_button: Button = $MainBackground/LogInContainer/InputContainer/CreateAccountButton
-@onready var back_button: Button = $MainBackground/LogInContainer/InputContainer/Button
-@onready var signup_text: Label = $MainBackground/LogInContainer/SignUpText
+@onready var username_field: LineEdit = $Background/LogInContainer/InputContainer/Username
+@onready var email_field: LineEdit = $Background/LogInContainer/InputContainer/Email
+@onready var password_field: LineEdit = $Background/LogInContainer/InputContainer/Password
+@onready var confirm_field: LineEdit = $Background/LogInContainer/InputContainer/ConfirmPassword
+@onready var create_button: Button = $Background/LogInContainer/InputContainer/CreateAccountButton
+@onready var back_button: Button = $Background/LogInContainer/InputContainer/BackButton
+@onready var signup_text: Label = $Background/LogInContainer/SignUpText
 
 var config := ConfigFile.new()
 const FILE_PATH := "user://players.cfg"

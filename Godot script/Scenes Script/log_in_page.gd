@@ -1,10 +1,10 @@
 extends Control
 
-@onready var username_field: LineEdit = $Background/Username
-@onready var password_field: LineEdit = $Background/Password
-@onready var login_button: Button = $Background/HBoxContainer/Log_in_button
-@onready var login_text: Label = $Background/Warning_text
-@onready var sign_up_button: Button = $Background/HBoxContainer/Sign_in_button
+@onready var username_field: LineEdit = $Background/LogInContainer/FieldContainer/Username
+@onready var password_field: LineEdit = $Background/LogInContainer/FieldContainer/Password
+@onready var login_button: Button = $Background/LogInContainer/ButtonContainer/LogInButton
+@onready var login_text: Label = $Background/WarningText
+@onready var sign_up_button: Button = $Background/LogInContainer/ButtonContainer/SignInButton
 
 
 var config := ConfigFile.new()
@@ -164,3 +164,7 @@ func reset_buttons(original_text: String):
 
 func _on_sign_up_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/sign_up_page.tscn")
+
+
+
+	
